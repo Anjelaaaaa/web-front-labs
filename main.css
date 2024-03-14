@@ -1,26 +1,26 @@
 body {
-    background-color: rgb(214, 202, 230);
-    color: rgb(113, 39, 156);
+    background-color: rgb(202, 216, 230);
+    color: rgb(39, 119, 156);
     font-family: Arial;
     margin: 50px;
 }
 main {
-    background-color: rgb(214, 202, 230);
-    color: rgb(113, 39, 156);
+    background-color: rgb(202, 216, 230);
+    color: rgb(39, 119, 156);
     font-family: Arial;
     margin: 20px;
 }
 footer {
-    background-color:rgba(214, 202, 230);
-    color: rgb(73, 34, 109);
+    background-color:rgba(91, 155, 197, 0.247);
+    color: rgb(29, 96, 128);
     padding: 8px;
     font-size: 12pt;
     font-style: italic;
     text-align: right;
 }
 header{
-    background-color:rgb(214, 202, 230);
-    color:rgb(72, 29, 112);
+    background-color:rgb(91, 155, 197, 0.247);
+    color:rgb(29, 96, 128);
     padding: 10px;
     font-size: 16pt;
 }
