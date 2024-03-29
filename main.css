@@ -1,3 +1,29 @@
+body {
+    background-color: rgb(216, 216, 216);
+    color: rgb(29, 96, 128);
+    font-family: Arial;
+    margin: 50px;
+}
+main {
+    background-color: rgb(216, 216, 216);
+    color: rgb(29, 96, 128);
+    font-family: Arial;
+    margin: 20px;
+}
+footer {
+    background-color:rgba(163, 163, 163, 0.247);
+    color: rgb(29, 96, 128);
+    padding: 8px;
+    font-size: 12pt;
+    font-style: italic;
+    text-align: right;
+}
+header{
+    background-color:rgba(163, 163, 163, 0.247);
+    color:rgb(29, 96, 128);
+    padding: 10px;
+    font-size: 16pt;
+}
 a {
     color: rgb(18, 72, 117);
     text-decoration: none;
@@ -16,36 +42,20 @@ a:hover {
     text-decoration: underline;
     background-color: aliceblue;
     text-shadow: 4px 3px 3px rgba(85, 84, 84, 0.582);
-    border-radius: 10px;
+    border-radius: 7px;
     transition: 0.3s;
 }
 a:active {
     color: black;
     opacity: 0.3;
 }
-body {
-    background-color: rgb(202, 216, 230);
-    color: rgb(39, 119, 156);
-    font-family: Arial;
-    margin: 50px;
+div.menu {
+    border: 3px double rgba(255, 0, 128, 0.678);
+    border-radius: 7px;
+    width: 400px;
+    margin: 0 auto;
 }
-main {
-    background-color: rgb(202, 216, 230);
-    color: rgb(39, 119, 156);
-    font-family: Arial;
-    margin: 20px;
-}
-footer {
-    background-color:rgba(91, 155, 197, 0.247);
-    color: rgb(29, 96, 128);
-    padding: 8px;
-    font-size: 12pt;
-    font-style: italic;
-    text-align: right;
-}
-header{
-    background-color:rgb(91, 155, 197, 0.247);
-    color:rgb(29, 96, 128);
-    padding: 10px;
-    font-size: 16pt;
+div.menu:hover {
+    background-color: rgba(255, 156, 214, 0.137);
+    box-shadow: 0 0 15px rgba(255, 0, 128, 0.308);
 }
