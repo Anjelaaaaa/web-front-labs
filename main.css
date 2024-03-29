@@ -1,3 +1,26 @@
+a {
+    color: rgb(18, 72, 117);
+    text-decoration: none;
+}
+a:link {
+    color: rgb(31, 31, 31);
+    text-decoration: none;
+}
+a:visited {
+    color: rgb(128, 11, 196);
+    text-decoration: none;
+}
+a:hover {
+    color: rgb(255, 0, 128);
+    text-decoration: underline;
+    background-color: aliceblue;
+    text-shadow: 4px 3px 3px rgba(85, 84, 84, 0.582);
+    border-radius: 10px;
+}
+a:active {
+    color: black;
+    opacity: 0.3;
+}
 body {
     background-color: rgb(202, 216, 230);
     color: rgb(39, 119, 156);
