@@ -8,7 +8,7 @@ main {
     background-color: rgb(216, 216, 216);
     color: rgb(29, 96, 128);
     font-family: Arial;
-    margin: 20px;
+    margin: 10px 20px 60px;
 }
 footer {
     background-color:rgba(163, 163, 163, 0.247);
@@ -17,6 +17,10 @@ footer {
     font-size: 12pt;
     font-style: italic;
     text-align: right;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
 }
 header{
     background-color:rgba(163, 163, 163, 0.247);
