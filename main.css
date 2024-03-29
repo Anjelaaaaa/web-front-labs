@@ -1,6 +1,7 @@
 a {
     color: rgb(18, 72, 117);
     text-decoration: none;
+    transition: 1s 2s;
 }
 a:link {
     color: rgb(31, 31, 31);
@@ -16,6 +17,7 @@ a:hover {
     background-color: aliceblue;
     text-shadow: 4px 3px 3px rgba(85, 84, 84, 0.582);
     border-radius: 10px;
+    transition: 0.3s;
 }
 a:active {
     color: black;
