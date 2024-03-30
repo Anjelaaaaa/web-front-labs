@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оноприенко Анжелика Андреевна. Комикс</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <style>
+        img {
+            margin-top: 200px;
+        }
+        div.k {
+            display: none;
+        }
+        img:hover + .comic .k {
+            display: block;
+            transition: 1s;
+            position: absolute;
+            border: 2px outset rgb(224, 127, 1);
+            background-color: rgb(240, 240, 240);
+            border-radius: 50%;
+            box-shadow: 4px 4px 13px rgba(173, 104, 0, 0.671);
+        }
+        .comic {
+            position: absolute;
+        }
+        div.a, div.b, div.c, div.d, div.e {
+            position: absolute;
+        }
+        div.a {
+            width: 30px;
+            height: 20px;
+            left: 350px;
+            top: -460px;
+        }
+        div.b {
+            width: 45px;
+            height: 30px;
+            left: 390px;
+            top: -505px;
+        }
+        div.c {
+            width: 60px;
+            height: 40px;
+            left: 440px;
+            top: -570px;
+        }
+        div.d {
+            width: 90px;
+            height: 60px;
+            left: 500px;
+            top: -660px;
+        }
+        div.e {
+            width: 190px;
+            height: 120px;
+            left: 565px;
+            top: -825px;
+            color: rgb(182, 103, 0);
+            text-align: center;
+            font-size: 23px;
+            font-weight: bold;
+            font-family: Comic Sans MS;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 4
+    </header>
+
+    <main>
+        <img src="horse.png" height="500">
+        <div class="comic">
+            <div class="k">
+                <div class="a"></div>
+            </div>
+            <div class="k">
+                <div class="b"></div>
+            </div>
+            <div class="k">
+                <div class="c"></div>
+            </div>
+            <div class="k">
+                <div class="d"></div>
+            </div>
+            <div class="k">
+                <div class="e">Не смеши мои подковы!</div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; Анжелика Оноприенко, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>
