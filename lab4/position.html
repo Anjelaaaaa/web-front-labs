@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оноприенко Анжелика Андреевна. Позиционирование</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <style>
+        div {
+            width: 300px;
+            height: 70px;
+            line-height: 70px;
+            text-align: center;
+            background-color: rgb(236, 214, 252);
+            border: 1px dashed rgb(180, 93, 221);
+            border-radius: 7px;
+            margin: 15px;
+            color: rgb(121, 5, 189);
+        }
+        .position-relative {
+            position: relative;
+            left: 150px;
+            top: -130px;
+            z-index: -1;
+        }
+        .position-relative:hover {
+            z-index: 1;
+        }
+        .position-absolute {
+            position: absolute;
+            left: 300px;
+        }
+        .position-absolute:hover {
+            width: 330px;
+            height: 100px;
+            line-height: 100px;
+            color: rgb(89, 49, 235);
+            background-color: rgb(210, 199, 255);
+            border: 2px dashed rgb(89, 49, 235);
+            box-shadow: 0 0 15px rgba(89, 49, 235, 0.555);
+            transition: 0.2s;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 4
+    </header>
+
+    <main>
+        <div>static</div>
+        <div>static</div>
+        <div class="position-relative">relative</div>
+        <div>static</div>
+        <div>static</div>
+        <div class="position-absolute">absolute</div>
+        <div>static</div>
+        <div>static</div>
+        <div>static</div>
+        <div>static</div>
+    </main>
+
+    <footer>
+        &copy; Анжелика Оноприенко, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>
