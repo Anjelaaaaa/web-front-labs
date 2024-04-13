@@ -24,6 +24,30 @@
         function showWelcome() {
             alert('Приветствую Вас на моей странице!\nЗаходите еще!')
         }
+        function showDif() {
+            let inputA = document.getElementById('numberA')
+            let inputB = document.getElementById('numberB')
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a - b;
+            alert('Разность ' + a + ' и ' + b + ' равна ' + result);
+        }
+        function showProd() {
+            let inputA = document.getElementById('numberA')
+            let inputB = document.getElementById('numberB')
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a * b;
+            alert('Произведение ' + a + ' и ' + b + ' равно ' + result);
+        }
+        function showDiv() {
+            let inputA = document.getElementById('numberA')
+            let inputB = document.getElementById('numberB')
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a / b;
+            alert('Деление ' + a + ' и ' + b + ' равно ' + result);
+        }
     </script>
     <style>
         header {
@@ -33,6 +57,7 @@
             text-align: center;
             margin: 10px;
             font-size: 22px;
+            padding: 8px;
         }
         .mes {
             text-align: center;
@@ -63,17 +88,22 @@
     </header>
 
     <main>
-        <div class="number">
-            <label>Первое число: <input type="number" value="5154" id="numberA"></label><br>
-        </div>
+        <div class="a">
+            <div class="number">
+                <label>Первое число: <input type="number" value="5154" id="numberA"></label><br>
+            </div>
 
-        <div class="number">
-            <label>Второе число: <input type="number" value="7891" id="numberB"></label><br>
+            <div class="number">
+                <label>Второе число: <input type="number" value="7891" id="numberB"></label><br>
+            </div>
         </div>
 
         <div class="mes">
             <div class="message" onclick="showSum()">Найти сумму чисел</div>
             <div class="message" onclick="showAuthor()">Узнать, кто автор страницы</div>
+            <div class="message" onclick="showDif()">Найти разность чисел</div>
+            <div class="message" onclick="showProd()">Найти произведение чисел</div>
+            <div class="message" onclick="showDiv()">Найти деление чисел</div>
         </div>
     </main>
         
