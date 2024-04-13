@@ -48,16 +48,24 @@
             let result = a / b;
             alert('Деление ' + a + ' и ' + b + ' равно ' + result);
         }
+        function changeOutput(bottonNum, backColor, textColor, border) {
+            let output = document.getElementById('output')
+            output.innerHTML = 'Нажата кнопка ' + bottonNum;
+            output.style.backgroundColor = backColor;
+            output.style.color = textColor;
+            output.style.border = border;
+        }
     </script>
     <style>
         header {
-            cursor:pointer;
+            cursor: pointer;
         }
         .number {
             text-align: center;
             margin: 10px;
             font-size: 22px;
             padding: 8px;
+            color: rgb(53, 53, 53);
         }
         .mes {
             text-align: center;
@@ -67,15 +75,35 @@
             padding: 8px;
             width: 400px;
             height: 30px;
-            background: linear-gradient(to right, rgba(102, 201, 240, 0.5), rgba(77, 147, 252, 0.5));
-            border: 2px solid rgb(255, 255, 255);
+            background: linear-gradient(to left, rgba(109, 119, 255, 0.5),
+            rgba(199, 183, 248, 0.5));
+            border: 4px solid rgb(255, 255, 255);
             border-radius: 7px;
             box-shadow: 0 0 13px rgba(255, 255, 255, 0.616);
-            vertical-align: middle;
-            text-align: center;
             font-size: 22px;
+            color: rgb(53, 53, 53);
             display: inline-block;
             cursor: pointer;
+        }
+        .button {
+            text-align: center;
+            margin: 10px;
+        }
+        .op {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #output {
+            border: 1px solid rgb(39, 39, 39);
+            border-radius: 5px;
+            width: 300px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 22px;
+            margin: 10px;
         }
         footer {
             cursor:pointer;
@@ -88,15 +116,14 @@
     </header>
 
     <main>
-        <div class="a">
-            <div class="number">
-                <label>Первое число: <input type="number" value="5154" id="numberA"></label><br>
-            </div>
-
-            <div class="number">
-                <label>Второе число: <input type="number" value="7891" id="numberB"></label><br>
-            </div>
+        <div class="number">
+            <label>Первое число: <input type="number" value="5154" id="numberA"></label><br>
         </div>
+
+        <div class="number">
+            <label>Второе число: <input type="number" value="7891" id="numberB"></label><br>
+        </div>
+   
 
         <div class="mes">
             <div class="message" onclick="showSum()">Найти сумму чисел</div>
@@ -104,6 +131,21 @@
             <div class="message" onclick="showDif()">Найти разность чисел</div>
             <div class="message" onclick="showProd()">Найти произведение чисел</div>
             <div class="message" onclick="showDiv()">Найти деление чисел</div>
+        </div>
+
+        <div class="button">
+            <input type="button" value="Кнопка 1" onclick="changeOutput(1,
+            'rgb(255, 170, 170)','rgb(53, 53, 53)', '3px solid rgb(215, 130, 130)')">
+            <input type="button" value="Кнопка 2" onclick="changeOutput(2,
+            'rgb(168, 204, 252)', 'rgb(53, 53, 53)', '3px dotted rgb(128, 164, 212)')">
+            <input type="button" value="Кнопка 3" onclick="changeOutput(3,
+            'rgb(230, 243, 155)', 'rgb(53, 53, 53)', '3px dashed rgb(206, 209, 0)')">
+            <input type="button" value="Кнопка 4" onclick="changeOutput(4,
+            'rgb(181, 248, 149)', 'rgb(53, 53, 53)', '3px double rgb(121, 198, 99)')">
+        </div>
+
+        <div class="op">
+            <div id="output"></div>
         </div>
     </main>
         
