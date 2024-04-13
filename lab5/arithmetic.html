@@ -8,14 +8,32 @@
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
     <link rel="icon" href="../favicon-16x16.png">
     <link rel="icon" href="../favicon-32x32.png">
+    <script>
+        function showSum() {
+            let a = 5154;
+            let b = 7891;
+            let result = a + b;
+            alert('Сумма ' + a + ' и ' + b + ' равна ' + result);
+        }
+    </script>
     <style>
+        .mes {
+            text-align: center;
+        }
         .message {
+            margin: 10px;
+            padding: 8px;
             width: 400px;
             height: 30px;
-            background-color: rgba(255, 149, 0, 0.37);
-            border: 2px solid rgb(255, 145, 0);
-            border-radius: 10px;
+            background: linear-gradient(to right, rgba(102, 201, 240, 0.5), rgba(77, 147, 252, 0.5));
+            border: 2px solid rgb(255, 255, 255);
+            border-radius: 7px;
+            box-shadow: 0 0 13px rgba(255, 255, 255, 0.616);
+            vertical-align: middle;
+            text-align: center;
+            font-size: 22px;
             display: inline-block;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -25,8 +43,10 @@
     </header>
 
     <main>
-        <div class="message">Сколько будет 5154+7891</div>
-        <div class="message">Узнать, кто автор страницы</div>
+        <div class="mes">
+            <div class="message" onclick="showSum()">Сколько будет 5154+7891</div>
+            <div class="message">Узнать, кто автор страницы</div>
+        </div>
     </main>
         
     <footer>
