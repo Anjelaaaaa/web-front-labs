@@ -10,36 +10,36 @@
     <link rel="icon" href="../favicon-32x32.png">
     <script>
         function showSumma() {
-            let inputA = document.getElementById('productA');
-            let inputB = document.getElementById('productB');
-            let inputC = document.getElementById('productC');
-            let inputD = document.getElementById('productD');
-            let inputE = document.getElementById('productE');
+            let inputA = document.getElementById("productA");
+            let inputB = document.getElementById("productB");
+            let inputC = document.getElementById("productC");
+            let inputD = document.getElementById("productD");
+            let inputE = document.getElementById("productE");
             let a = parseInt(inputA.value) || 0;
             let b = parseInt(inputB.value) || 0;
             let c = parseInt(inputC.value) || 0;
             let d = parseInt(inputD.value) || 0;
             let e = parseInt(inputE.value) || 0;
             let result = a * 259 + b * 165 + c * 369 + d * 200 + e * 749;
-            let price = document.getElementById('price');
+            let price = document.getElementById("price");
             if (a < 0 || b < 0 || c < 0 || d < 0 || e < 0) {
-                alert('Вводите только положительные значения!');
-                price.innerHTML = '';
+                alert("Вводите только положительные значения!");
+                price.innerHTML = "";
                 return;
             }
             if (inputA.value == "" && inputB.value == "" && inputC.value == "" && inputD.value == "" && inputE.value == "") {
-                price.innerHTML = '';
+                price.innerHTML = "";
                 return;
             }
-            price.innerHTML = 'Общая цена: ' + result + '₽';
+            price.innerHTML = "Общая цена: " + result + "₽";
         }
         function showClean() {
-            productA.value = '';
-            productB.value = '';
-            productC.value = '';
-            productD.value = '';
-            productE.value = '';
-            price.innerHTML = ''
+            productA.value = "";
+            productB.value = "";
+            productC.value = "";
+            productD.value = "";
+            productE.value = "";
+            price.innerHTML = "";
         }
     </script>
     <style>
