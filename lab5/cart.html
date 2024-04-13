@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оноприенко Анжелика Андреевна. Корзина</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <script>
+        function showSumma() {
+            let inputA = document.getElementById('productA');
+            let inputB = document.getElementById('productB');
+            let inputC = document.getElementById('productC');
+            let inputD = document.getElementById('productD');
+            let inputE = document.getElementById('productE');
+            let a = parseInt(inputA.value) || 0;
+            let b = parseInt(inputB.value) || 0;
+            let c = parseInt(inputC.value) || 0;
+            let d = parseInt(inputD.value) || 0;
+            let e = parseInt(inputE.value) || 0;
+            let result = a * 259 + b * 165 + c * 369 + d * 200 + e * 749;
+            let price = document.getElementById('price');
+            if (a < 0 || b < 0 || c < 0 || d < 0 || e < 0) {
+                alert('Вводите только положительные значения!');
+                price.innerHTML = '';
+                return;
+            }
+            if (inputA.value == "" && inputB.value == "" && inputC.value == "" && inputD.value == "" && inputE.value == "") {
+                price.innerHTML = '';
+                return;
+            }
+            price.innerHTML = 'Общая цена: ' + result + '₽';
+        }
+        function showClean() {
+            productA.value = '';
+            productB.value = '';
+            productC.value = '';
+            productD.value = '';
+            productE.value = '';
+            price.innerHTML = ''
+        }
+    </script>
+    <style>
+        .basket {
+            margin-top: 40px;
+            background-color: rgba(151, 217, 226, 0.116);
+            border: 2px solid rgb(11, 207, 181);
+            box-shadow: 0 0 13px rgba(105, 255, 235, 0.76);
+            border-radius: 10px;
+            width: 400px;
+            text-align: center;
+            color: rgb(14, 180, 172);
+            font-size: 20px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .product {
+            margin: 15px;
+            padding: 7px;
+            border-radius: 10px;
+            color: rgb(82, 81, 81);
+        }
+        .button {
+            margin: 5px;
+            display: inline-block;
+        }
+        #price {
+            padding: 7px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 5
+    </header>
+
+    <main>
+       <div class="basket">
+            <h1>Корзина товаров</h1>
+            <div class="product">
+                <label>
+                    Зубная паста (259₽/шт)<br><input type="number"
+                    placeholder="Введите количество" id="productA">
+                </label><br>
+            </div>
+
+            <div class="product">
+                <label>
+                    Мыло (165₽/шт)<br><input type="number"
+                    placeholder="Сколько угодно штук" id="productB">
+                </label><br>
+            </div>
+
+            <div class="product">
+                <label>
+                    Крем для лица (369₽/шт)<br><input type="number"
+                    placeholder="Любое количество" id="productC">
+                </label><br>
+            </div>
+            
+            <div class="product">  
+                <label>
+                    Духи (200₽/мл)<br><input type="number"
+                    placeholder="Вводите в мл" id="productD">
+                </label><br>
+            </div>
+            
+            <div class="product">
+                <label>
+                    Шампунь (749₽/шт)<br><input type="number"
+                    placeholder="Сколько хотите" id="productE">
+                </label><br>
+            </div>
+
+            <div class="button">
+                <input type="button" value="Рассчитать" onclick="showSumma()">
+            </div>
+
+            <div class="button">
+                <input type="button" value="Очистить" onclick="showClean()">
+            </div>
+            <div id="price"></div>
+       </div>
+    </main>
+       
+    <footer>
+        &copy; Анжелика Оноприенко, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>
