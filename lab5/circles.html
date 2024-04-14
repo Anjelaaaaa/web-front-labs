@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оноприенко Анжелика Андреевна. Лабораторная 5</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <script>
+        function circleLeaveA() {
+            let cA = document.getElementById('circleA');
+            cA.style.opacity = "0";
+            cA.style.height = "0px";
+            cA.style.width = "0px";
+            cA.style.transition = "0.5s";
+        }
+        function circleLeaveB() {
+            let cB = document.getElementById('circleB');
+            cB.style.opacity = "0";
+            cB.style.height = "0px";
+            cB.style.width = "0px";
+            cB.style.transition = "0.5s";
+        }
+        function circleLeaveC() {
+            let cC = document.getElementById('circleC');
+            cC.style.opacity = "0";
+            cC.style.height = "0px";
+            cC.style.width = "0px";
+            cC.style.transition = "0.5s";
+        }
+        function circleLeaveD() {
+            let cD = document.getElementById('circleD');
+            cD.style.opacity = "0";
+            cD.style.height = "0px";
+            cD.style.width = "0px";
+            cD.style.transition = "0.5s";
+        }
+        function circleLeaveE() {
+            let cE = document.getElementById('circleE');
+            cE.style.opacity = "0";
+            cE.style.height = "0px";
+            cE.style.width = "0px";
+            cE.style.transition = "0.5s";
+        }
+        function circleLeaveF() {
+            let cF = document.getElementById('circleF');
+            cF.style.opacity = "0";
+            cF.style.height = "0px";
+            cF.style.width = "0px";
+            cF.style.transition = "0.5s";
+        }
+        function circleLeaveG() {
+            let cG = document.getElementById('circleG');
+            cG.style.opacity = "0";
+            cG.style.height = "0px";
+            cG.style.width = "0px";
+            cG.style.transition = "0.5s";
+        }
+        function circleLeaveH() {
+            let cH = document.getElementById('circleH');
+            cH.style.opacity = "0";
+            cH.style.height = "0px";
+            cH.style.width = "0px";
+            cH.style.transition = "0.5s";
+        }
+        function circleLeaveI() {
+            let cI = document.getElementById('circleI');
+            cI.style.opacity = "0";
+            cI.style.height = "0px";
+            cI.style.width = "0px";
+            cI.style.transition = "0.5s";
+        }
+        function circleLeaveJ() {
+            let cJ = document.getElementById('circleJ');
+            cJ.style.opacity = "0";
+            cJ.style.height = "0px";
+            cJ.style.width = "0px";
+            cJ.style.transition = "0.5s";
+        }
+        function circleCome() {
+            let circles = ['circleA', 'circleB', 'circleC', 'circleD', 'circleE',
+            'circleF', 'circleG', 'circleH', 'circleI', 'circleJ'];
+            circles.forEach(function(circleId) {
+                let circle = document.getElementById(circleId);
+                circle.style.opacity = "1";
+                circle.style.height = "60px";
+                circle.style.width = "60px";  
+                circle.style.transition = "0.5s";
+            });
+        }
+    </script>
+    <style>
+        img {
+            margin-top: 50px;
+            margin-left: 20px;
+        }
+        .circle {
+            height: 60px;
+            width: 60px;
+            border-radius: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: black;
+            font-weight: bold;
+            font-size: 17px;
+            position: absolute;
+            box-shadow: 8px 8px 22px rgba(0, 0, 0, 0.87);
+            cursor: pointer;
+        }
+        .minicircle {
+            height: 25px;
+            width: 25px;
+            background-color: aliceblue;
+            border-radius: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .A {
+            background: radial-gradient(at top left, rgb(255, 241, 164), rgb(211, 179, 0));
+            border: 2px solid rgb(233, 201, 22);
+            left: 620px;
+            top: 380px;
+        }
+        .B {
+            background: radial-gradient(at top left, rgb(152, 175, 252), rgb(33, 75, 211));
+            border: 2px solid rgb(94, 118, 255);
+            left: 1170px;
+            top: 650px;
+        }
+        .C {
+            background: radial-gradient(at top left, rgb(247, 151, 138), rgb(235, 55, 0));
+            border: 2px solid rgb(255, 101, 62);
+            left: 520px;
+            top: 700px;
+        }
+        .D {
+            background: radial-gradient(at top left, rgb(212, 148, 255), rgb(96, 10, 146));
+            border: 2px solid rgb(143, 60, 221);
+            left: 970px;
+            top: 450px;
+        }
+        .E {
+            background: radial-gradient(at top left, rgb(255, 213, 149), rgb(243, 130, 0));
+            border: 2px solid rgb(253, 171, 48);
+            left: 1180px;
+            top: 400px;
+        }
+        .F {
+            background: radial-gradient(at top left, rgb(163, 236, 156), rgb(6, 102, 14));
+            border: 2px solid rgb(46, 146, 51);
+            left: 920px;
+            top: 225px;
+        }
+        .G {
+            background: radial-gradient(at top left, rgb(247, 136, 136), rgb(139, 14, 14));
+            border: 2px solid rgb(197, 59, 59);
+            left: 420px;
+            top: 250px;
+        }
+        .H {
+            background: radial-gradient(at top left, rgb(134, 134, 134), rgb(0, 0, 0));
+            border: 2px solid rgb(70, 69, 69);
+            left: 220px;
+            top: 300px;
+        }
+        .I {
+            background: radial-gradient(at top left, rgb(152, 175, 252), rgb(28, 106, 196));
+            border: 2px solid rgb(94, 150, 255);
+            left: 220px;
+            top: 600px;
+        }
+        .J {
+            background: radial-gradient(at top left, rgb(255, 255, 255), rgb(177, 175, 175));
+            border: 2px solid rgb(199, 199, 199);
+            left: 920px;
+            top: 690px;
+        }
+        input {
+            height: 100px;
+            width: 250px;
+            font-size: 20px;
+            background-color: rgba(0, 0, 0, 0);
+            border: rgba(0, 0, 0, 0);
+            color: rgb(224, 224, 224);
+            cursor: pointer;
+            position: absolute;
+            left: 615px;
+            top: 500px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 5
+    </header>
+
+    <main>
+        <img src="billiard.png" height="800">
+
+        <div class="circle A" id="circleA" onclick="circleLeaveA()">
+            <div class="minicircle">1</div>
+        </div>
+
+        <div class="circle B" id="circleB" onclick="circleLeaveB()">
+            <div class="minicircle">2</div>
+        </div>
+
+        <div class="circle C" id="circleC" onclick="circleLeaveC()">
+            <div class="minicircle">3</div>
+        </div>
+
+        <div class="circle D" id="circleD" onclick="circleLeaveD()">
+            <div class="minicircle">4</div>
+        </div>
+
+        <div class="circle E" id="circleE" onclick="circleLeaveE()">
+            <div class="minicircle">5</div>
+        </div>
+
+        <div class="circle F" id="circleF" onclick="circleLeaveF()">
+            <div class="minicircle">6</div>
+        </div>
+
+        <div class="circle G" id="circleG" onclick="circleLeaveG()">
+            <div class="minicircle">7</div>
+        </div>
+
+        <div class="circle H" id="circleH" onclick="circleLeaveH()">
+            <div class="minicircle">8</div>
+        </div>
+        
+        <div class="circle I" id="circleI" onclick="circleLeaveI()">
+            <div class="minicircle">9</div>
+        </div>
+
+        <div class="circle J" id="circleJ" onclick="circleLeaveJ()">
+            <div class="minicircle">10</div>
+        </div>
+
+        <input type="button" value="Вернуть шары на стол" onclick="circleCome()">
+    </main>
+       
+    <footer>
+        &copy; Анжелика Оноприенко, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>
