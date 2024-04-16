@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оноприенко Анжелика Андреевна. Фильтры</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <script>
+        function blurChange() {
+            let valueA = document.getElementById("blurValue").value + "px";
+            document.getElementById("blurOutput").innerText = valueA
+            document.getElementById("blurImage").style.filter = "blur(" + valueA + ")"
+        }
+        function brightnessChange() {
+            let valueB = document.getElementById("brightnessValue").value + "%";
+            document.getElementById("brightnessOutput").innerText = valueB
+            document.getElementById("brightnessImage").style.filter = "brightness(" + valueB + ")"
+        }
+        function contrastChange() {
+            let valueC = document.getElementById("contrastValue").value + "%";
+            document.getElementById("contrastOutput").innerText = valueC
+            document.getElementById("contrastImage").style.filter = "contrast(" + valueC + ")"
+        }
+        function grayscaleChange() {
+            let valueD = document.getElementById("grayscaleValue").value + "%";
+            document.getElementById("grayscaleOutput").innerText = valueD
+            document.getElementById("grayscaleImage").style.filter = "grayscale(" + valueD + ")"
+        }
+        function huerotateChange() {
+            let valueE = document.getElementById("hue-rotateValue").value + "deg";
+            document.getElementById("hue-rotateOutput").innerText = valueE
+            document.getElementById("hue-rotateImage").style.filter = "hue-rotate(" + valueE + ")"
+        }
+        function invertChange() {
+            let valueF = document.getElementById("invertValue").value + "%";
+            document.getElementById("invertOutput").innerText = valueF
+            document.getElementById("invertImage").style.filter = "invert(" + valueF + ")"
+        }
+        function saturateChange() {
+            let valueG = document.getElementById("saturateValue").value + "%";
+            document.getElementById("saturateOutput").innerText = valueG
+            document.getElementById("saturateImage").style.filter = "saturate(" + valueG + ")"
+        }
+        function sepiaChange() {
+            let valueH = document.getElementById("sepiaValue").value + "%";
+            document.getElementById("sepiaOutput").innerText = valueH
+            document.getElementById("sepiaImage").style.filter = "sepia(" + valueH + ")"
+        }
+    </script>
+    <style>
+        .a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+         .filter {
+            border: 3px solid rgb(230, 210, 30);
+            border-radius: 7px;
+            background-color: rgba(255, 233, 37, 0.137);
+            margin: 30px;
+            padding: 15px;
+            width: 610px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        img {
+            border: 3px solid rgb(214, 200, 0);
+            border-radius: 10px;
+            box-shadow: 7px 7px 14px rgba(71, 71, 71, 0.651);
+            height: 400px;
+            width: 700px;
+        }
+        input {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 5
+    </header>
+
+    <main>
+        <div class="a">
+            <div class="filter">
+                Фильтр blur:
+                <input type="range" min="0" max="20" value="0" onchange="blurChange()" id="blurValue">
+                <span id="blurOutput"></span>
+            </div>
+        </div>
+
+        <div class="a"><img src="bob.jpg" id="blurImage"></div>
+
+        <div class="a">
+            <div class="filter">
+                Фильтр brightness:
+                <input type="range" min="0" max="200" value="100" onchange="brightnessChange()" id="brightnessValue">
+                <span id="brightnessOutput"></span>
+            </div>
+        </div>
+        
+        <div class="a"><img src="star.jpg" id="brightnessImage"></div>
+
+        <div class="a">
+            <div class="filter">
+                Фильтр contrast:
+                <input type="range" min="0" max="200" value="100" onchange="contrastChange()" id="contrastValue">
+                <span id="contrastOutput"></span>
+            </div>
+        </div>
+
+        <div class="a"><img src="skvid.png" id="contrastImage"></div>
+    
+        <div class="a">
+            <div class="filter">
+                Фильтр grayscale:
+                <input type="range" min="0" max="200" value="100" onchange="grayscaleChange()" id="grayscaleValue">
+                <span id="grayscaleOutput"></span>
+            </div>
+        </div>
+
+        <div class="a"><img src="crabs.png" id="grayscaleImage"></div>
+
+        <div class="a">
+            <div class="filter">
+                Фильтр hue-rotate:
+                <input type="range" min="0" max="200" value="100" onchange="huerotateChange()" id="hue-rotateValue">
+                <span id="hue-rotateOutput"></span>
+            </div>
+        </div>
+
+        <div class="a"><img src="sendi.png" id="hue-rotateImage"></div>
+
+        <div class="a">
+            <div class="filter">
+                Фильтр invert:
+                <input type="range" min="0" max="100" value="0" onchange="invertChange()" id="invertValue">
+                <span id="invertOutput"></span>
+            </div>
+        </div>
+
+        <div class="a"><img src="plancton.png" id="invertImage"></div>
+    
+        <div class="a">
+            <div class="filter">
+                Фильтр saturate:
+                <input type="range" min="0" max="200" value="100" onchange="saturateChange()" id="saturateValue">
+                <span id="saturateOutput"></span>
+            </div>
+        </div>
+
+        <div class="a"><img src="garry.webp" id="saturateImage"></div>
+      
+        <div class="a">
+            <div class="filter">
+                Фильтр sepia:
+                <input type="range" min="0" max="200" value="100" onchange="sepiaChange()" id="sepiaValue">
+                <span id="sepiaOutput"></span>
+            </div>
+        </div>
+
+        <div class="a"><img src="perl.png" id="sepiaImage"></div>
+    </main>
+       
+    <footer>
+        &copy; Анжелика Оноприенко, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>
