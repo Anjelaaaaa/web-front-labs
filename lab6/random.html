@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Оноприенко Анжелика Андреевна. Лабораторная 6</title>
+    <title>Оноприенко Анжелика Андреевна. Угадай число</title>
     <link rel="stylesheet" href="../main.css">
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
     <link rel="icon" href="../favicon-16x16.png">
     <link rel="icon" href="../favicon-32x32.png">
     <style>
         .game {
-            border: 3px double rgb(216, 123, 1);
+            border: 3px double rgb(216, 1, 91);
             border-radius: 20px;
-            background-color: rgb(245, 234, 220);
+            background-color: rgba(244, 220, 245, 0.637);
             color: rgb(255, 49, 111);
             width: 500px;
             padding: 20px;
@@ -28,10 +28,10 @@
             padding: 7px;
             margin-top: 5px;
             font-size: 18px;
-            color: rgb(255, 49, 111);
+            color: rgb(255, 255, 255);
             border: 1px solid rgb(255, 49, 111);
             border-radius: 10px;
-            background-color: rgb(245, 208, 217);
+            background-color: rgb(253, 55, 114)
         }
         .button1 {
             padding: 7px;
@@ -48,11 +48,16 @@
             color: rgb(255, 49, 111);
             border: 1px solid rgb(255, 49, 111);
             border-radius: 10px;
-            background-color: rgb(245, 234, 220);
+            background-color: rgb(245, 228, 236);
             margin-bottom: 5px;
+            box-shadow: 0 0 7px rgba(253, 140, 196, 0.637);
         }
         #result {
             margin-top: 15px;
+        }
+        .list {
+            text-align: left;
+            line-height: 22px;
         }
     </style>
     <script>
@@ -63,6 +68,7 @@
             let screens = document.getElementsByClassName('game');
             screens[0].style.display = 'none';
             screens[1].style.display = 'block';
+            screens[3].style.display = 'none';
         }
         function guess() {
             let input = document.getElementById('user-number');
@@ -89,6 +95,7 @@
                     let screens = document.getElementsByClassName('game');
                     screens[1].style.display = 'none';
                     screens[2].style.display = 'block';
+                    screens[3].style.display = 'none';
                     document.getElementById('number').innerHTML = number;
                     document.getElementById('try-count').innerHTML = count;
                 }
@@ -102,6 +109,18 @@
             count = 0; 
             document.getElementById('result').innerHTML = '';
             document.getElementById('user-number').value = '';
+        }
+        function Rules() {
+            let screen = document.getElementsByClassName('game1');
+            if(screen[2].style.display == 'none') {
+                screen[0].style.display = 'none';
+                screen[1].style.display = 'block';
+                screen[2].style.display = 'block'
+            } else {
+                screen[0].style.display = 'block';
+                screen[1].style.display = 'none';
+                screen[2].style.display = 'none'
+            }
         }
     </script>
 </head>
@@ -141,6 +160,30 @@
             </div>
             <div class="text">
                 <button class="button" onclick="again()">Сыграть ещё раз</button>
+            </div>
+        </div>
+
+        <div class="game">
+            <div class="game1">
+                <button class="button1" onclick="Rules()">Показать правила игры</button>
+            </div>
+            <div class="game1" style="display: none;">
+                <button class="button1" onclick="Rules()">Скрыть правила игры</button>
+            </div>
+            <div class="game1" style="display: none;">
+                <ol type="A" class="list"> 
+                    <li>Нажмите на кнопку "сыграть в игру"</li>
+                    <li>Вводите числа строго не меньше 1</li>
+                    <li>Вводите числа строго не больше 100</li>
+                    <li>Попытайтесь вписать любое число, соответствующее правилам B и C</li>
+                    <li>
+                        Следуйте подсказкам, которые говорят, что вы ввели слишком большое
+                        или слишком маленькое число
+                    </li>
+                    <li>Пробуйте до тех пор, пока не отгадаете загаданное число</li>
+                    <li>Как только отгадали число, можно радоваться!</li>
+                    <li>Не забудьте сыграть еще раз!</li>
+                </ol>
             </div>
         </div>
     </main>
