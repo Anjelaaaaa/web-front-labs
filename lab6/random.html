@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оноприенко Анжелика Андреевна. Лабораторная 6</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <style>
+        .game {
+            border: 3px double rgb(216, 123, 1);
+            border-radius: 20px;
+            background-color: rgb(245, 234, 220);
+            color: rgb(255, 49, 111);
+            width: 500px;
+            padding: 20px;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .text {
+            padding: 7px;
+            font-size: 18px;
+            color: rgb(255, 49, 111);
+        }
+        .button {
+            padding: 7px;
+            margin-top: 5px;
+            font-size: 18px;
+            color: rgb(255, 49, 111);
+            border: 1px solid rgb(255, 49, 111);
+            border-radius: 10px;
+            background-color: rgb(245, 208, 217);
+        }
+        .button1 {
+            padding: 7px;
+            font-size: 18px;
+            color: rgb(255, 49, 111);
+            border: rgba(0, 0, 0, 0);
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0);
+            font-weight: bold;
+        }
+        .button2 {
+            padding: 7px;
+            font-size: 18px;
+            color: rgb(255, 49, 111);
+            border: 1px solid rgb(255, 49, 111);
+            border-radius: 10px;
+            background-color: rgb(245, 234, 220);
+            margin-bottom: 5px;
+        }
+        #result {
+            margin-top: 15px;
+        }
+    </style>
+    <script>
+        let number;
+        let count = 0;
+        function startGame() {
+            number = Math.floor(Math.random()*100)+1;
+            let screens = document.getElementsByClassName('game');
+            screens[0].style.display = 'none';
+            screens[1].style.display = 'block';
+        }
+        function guess() {
+            let input = document.getElementById('user-number');
+            let userNumber = parseInt(input.value);
+            let message = document.getElementById('result');
+            if(isNaN(userNumber)) {
+                message.innerHTML = 'Вы не ввели число';
+            } 
+            else if(userNumber > 100) {
+                message.innerHTML = 'Число больше 100';
+            }
+            else if(userNumber < 1) {
+                message.innerHTML = 'Число меньше 1';
+            }
+            else {
+                count++;
+                if(userNumber > number) {
+                    message.innerHTML = 'Вы ввели слишком большое число';
+                }
+                else if(userNumber < number) {
+                    message.innerHTML = 'Вы ввели слишком маленькое число';
+                }
+                else {
+                    let screens = document.getElementsByClassName('game');
+                    screens[1].style.display = 'none';
+                    screens[2].style.display = 'block';
+                    document.getElementById('number').innerHTML = number;
+                    document.getElementById('try-count').innerHTML = count;
+                }
+            }
+        }   
+        function again(params) {
+            let screens = document.getElementsByClassName('game');
+            screens[1].style.display = 'block';
+            screens[2].style.display = 'none';
+            number = Math.floor(Math.random()*100)+1;
+            count = 0; 
+            document.getElementById('result').innerHTML = '';
+            document.getElementById('user-number').value = '';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 6
+    </header>
+
+    <main>
+        <div class="game">
+            <button class="button1" onclick="startGame()">
+                Сыграть в игру
+            </button>
+        </div>
+
+        <div class="game" style="display: none;">
+            <h1>Угадай число!</h1>
+            <div class="text">
+                <div class="text">
+                    Задумано число от 1 до 100. Угадайте, какое?<br>
+                </div>
+                <div class="text">
+                    <input type="number" value="" min="1" max="100" id="user-number" class="button2"><br>
+                </div>
+                <button onclick="guess()" class="button">Угадать</button>
+                <div id="result"></div>
+            </div>
+        </div>
+
+        <div class="game" style="display: none;">
+            <h1>Поздравляем, вы выиграли!</h1>
+            <div class="text">
+                Задуманное число: <span id="number"></span>
+            </div>
+            <div class="text">
+                Количество попыток: <span id="try-count"></span>
+            </div>
+            <div class="text">
+                <button class="button" onclick="again()">Сыграть ещё раз</button>
+            </div>
+        </div>
+    </main>
+       
+    <footer>
+        &copy; Анжелика Оноприенко, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>
