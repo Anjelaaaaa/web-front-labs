@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оноприенко Анжелика Андреевна. Фильтр товаров</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <style>
+        img {
+            height: 500px;
+            margin-top: 15px;
+        }
+        .wear {
+            text-align: center;
+            line-height: 30px;
+            color: rgb(66, 66, 66);
+        }
+        #wear-color {
+            font-size: 16px;
+            color: rgb(0, 0, 0);
+            background-color: rgb(207, 207, 207);
+            border-radius: 5px;
+        }
+        #wear-type {
+            font-size: 16px;
+            color: rgb(0, 0, 0);
+            background-color: rgb(207, 207, 207);
+            border-radius: 5px;
+        }
+    </style>
+    <script>
+        function filter() {
+            let color = document.getElementById('wear-color').value;
+            let type = document.getElementById('wear-type').value;
+            let wear= document.getElementById('wear');
+            wear.style.border = "2px solid black"
+            wear.style.borderRadius = "10px"
+
+            if(color == 'Белый' && type == 'Футболка') {
+                wear.src = "whitef.webp"
+            }
+            else if(color == 'Серый' && type == 'Футболка') {
+                wear.src = "grayf.webp"
+            }
+            else if(color == 'Черный' && type == 'Футболка') {
+                wear.src = "blackf.webp"
+            }
+            else if(color == 'Белый' && type == 'Шорты') {
+                wear.src = "whitesh.webp"
+            }
+            else if(color == 'Серый' && type == 'Шорты') {
+                wear.src = "graysh.webp"
+            }
+            else if(color == 'Черный' && type == 'Шорты') {
+                wear.src = "blacksh.webp"
+            }
+            else if(color == 'Белый' && type == 'Кроссовки') {
+                wear.src = "whitek.jpg"
+            }
+            else if(color == 'Серый' && type == 'Кроссовки') {
+                wear.src = "grayk.jpg"
+            }
+            else {
+                wear.src = "blackk.jpg"
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 6
+    </header>
+
+    <main>
+        <div class="wear">
+            Цвет одежды:
+            <select id="wear-color">
+                <option>Белый</option>
+                <option>Черный</option>
+                <option>Серый</option>
+            </select><br>
+
+            Цвет одежды:
+            <select id="wear-type">
+                <option>Футболка</option>
+                <option>Шорты</option>
+                <option>Кроссовки</option>
+            </select><br>
+
+            <button onclick="filter()">ОК</button><br>
+
+            <img id="wear">
+        </div>
+    </main>
+       
+    <footer>
+        &copy; Анжелика Оноприенко, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>
