@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оноприенко Анжелика Андреевна. Перебор цветов</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <style>
+        .color {
+            color: rgb(1, 103, 161);
+            background-color: rgb(127, 185, 219);
+            border: 3px dashed rgba(0, 129, 204);
+            border-radius: 10px;
+            text-align: center;
+            margin: auto;
+            width: 300px;
+            padding: 10px;
+            line-height: 30px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: 1s;
+        }
+    </style>
+    <script>
+        function changeColor(div) {
+            if(div.style.backgroundColor == 'rgb(127, 185, 219)') {
+                div.style.backgroundColor = 'rgb(221, 134, 182)';
+                div.style.border = '3px dashed rgb(204, 0, 126)';
+                div.style.color = 'rgb(161, 1, 108)';
+                document.getElementById('color-name').innerHTML = 'розовый';
+            }
+            else if(div.style.backgroundColor == 'rgb(221, 134, 182)') {
+                div.style.backgroundColor = 'rgb(166, 207, 150)';
+                div.style.border = '3px dashed rgb(0, 175, 44)';
+                div.style.color = 'rgb(1, 161, 14)';
+                document.getElementById('color-name').innerHTML = 'зелёный';
+            }
+            else if(div.style.backgroundColor == 'rgb(166, 207, 150)') {
+                div.style.backgroundColor = 'rgb(218, 188, 125)';
+                div.style.border = '3px dashed rgb(204, 122, 0)';
+                div.style.color = 'rgb(161, 97, 1)';
+                document.getElementById('color-name').innerHTML = 'оранжевый';
+            }
+            else if(div.style.backgroundColor == 'rgb(218, 188, 125)') {
+                div.style.backgroundColor = 'rgb(193, 146, 207)';
+                div.style.border = '3px dashed rgb(134, 0, 175)';
+                div.style.color = 'rgb(110, 1, 161)';
+                document.getElementById('color-name').innerHTML = 'фиолетовый';
+            }
+            else {
+                div.style.backgroundColor = 'rgb(127, 185, 219)';
+                div.style.border = '3px dashed rgb(0, 129, 204)';
+                div.style.color = 'rgb(1, 103, 161)';
+                document.getElementById('color-name').innerHTML = 'синий';
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 6
+    </header>
+
+    <main>
+        <div class="color" ondblclick="changeColor(this)">
+            Цвет: <span id="color-name">синий</span><br>
+            Сделайте двойной щелчок, чтобы сменить
+        </div>
+    </main>
+       
+    <footer>
+        &copy; Анжелика Оноприенко, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>
