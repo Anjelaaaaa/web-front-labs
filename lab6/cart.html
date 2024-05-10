@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оноприенко Анжелика Андреевна. Корзина товаров</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <style>
+        .cart {
+            margin: 10px;
+            line-height: 40px;
+            font-size: 18px;
+            text-align: center;
+        }
+        table {
+            margin: auto;
+            width: 700px;
+            box-shadow: 0 0 7px rgb(94, 133, 160);
+            background-color: rgb(210, 214, 221);
+        }
+        button {
+            font-size: 18px;
+        }
+    </style>
+    <script>
+        function cartProduct() {
+            let inputA = document.getElementById("productA");
+            let inputB = document.getElementById("productB");
+            let inputC = document.getElementById("productC");
+            let inputD = document.getElementById("productD");
+            let inputE = document.getElementById("productE");
+            let inputF = document.getElementById("productF");
+            let inputG = document.getElementById("productG");
+            let balans = document.getElementById("balans");
+            let a = parseInt(inputA.value) || 0;
+            let b = parseInt(inputB.value) || 0;
+            let c = parseInt(inputC.value) || 0;
+            let d = parseInt(inputD.value) || 0;
+            let e = parseInt(inputE.value) || 0;
+            let f = parseInt(inputF.value) || 0;
+            let g = parseInt(inputG.value) || 0;
+            let bal = parseInt(balans.value);
+            let result = a * 249 + b * 229 + c * 269 + d * 259 + e * 253 + f * 269 + g * 249;
+            let price = document.getElementById("price");
+            if (a < 0 || b < 0 || c < 0 || d < 0 || e < 0 || f < 0 || g < 0) {
+                price.innerHTML = "Вводите только положительные значения";
+            }
+            else if(inputA.value == "" && inputB.value == "" && inputC.value == "" && inputD.value == "" && inputE.value == "" && inputF.value == "" && inputG.value == "") {
+                price.innerHTML = "Выберите хотябы один товар";
+            }
+            else if(result > bal) {
+                price.innerHTML = "Недостаточно средств";
+                price.style.fontStyle = "italic"
+            }
+            else{
+                document.getElementById("balans").value = bal - result;
+                price.innerHTML = "<i>Заказ успешно оформлен</i> <br> Общая сумма: " + result + "₽";
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 6
+    </header>
+
+    <main>
+        <div class="cart">
+            <label>Мой баланс:<input type="number" min="0" max="100000" value="5000" id="balans">₽</label>
+
+            <table border="1">
+                <tr>
+                    <td></td>
+                    <td>Название</td>
+                    <td>Цена (₽)</td>
+                    <td>Количество</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Яблочный сок</td>
+                    <td>249</td>
+                    <td><input type="number" id="productA"></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Апельсиновый сок</td>
+                    <td>229</td>
+                    <td><input type="number" id="productB"></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Гранатовый сок</td>
+                    <td>269</td>
+                    <td><input type="number" id="productC"></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Персиковый сок</td>
+                    <td>259</td>
+                    <td><input type="number" id="productD"></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Ананасовый сок</td>
+                    <td>253</td>
+                    <td><input type="number" id="productE"></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Виноградный сок</td>
+                    <td>269</td>
+                    <td><input type="number" id="productF"></td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Ягодный сок</td>
+                    <td>249</td>
+                    <td><input type="number" id="productG"></td>
+                </tr>
+            </table>
+
+            <button onclick="cartProduct()">ОК</button><br>
+
+            <div id="price"></div>
+        </div>
+    </main>
+       
+    <footer>
+        &copy; Анжелика Оноприенко, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>

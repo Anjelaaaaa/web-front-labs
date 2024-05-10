@@ -11,12 +11,17 @@
     <style>
         img {
             height: 500px;
-            margin-top: 15px;
         }
         .wear {
             text-align: center;
-            line-height: 30px;
+            line-height: 35px;
             color: rgb(66, 66, 66);
+            background-color: aliceblue;
+            width: 700px;
+            padding: 30px;
+            margin: 20px auto;
+            border-radius: 15px;
+            font-weight: bold;
         }
         #wear-color {
             font-size: 16px;
@@ -30,26 +35,27 @@
             background-color: rgb(207, 207, 207);
             border-radius: 5px;
         }
+        button {
+            font-size: 16px;
+        }
     </style>
     <script>
         function filter() {
             let color = document.getElementById('wear-color').value;
             let type = document.getElementById('wear-type').value;
             let wear= document.getElementById('wear');
-            wear.style.border = "2px solid black"
-            wear.style.borderRadius = "10px"
 
             if(color == 'Белый' && type == 'Футболка') {
-                wear.src = "whitef.webp"
+                wear.src = "whitef.jpg"
             }
             else if(color == 'Серый' && type == 'Футболка') {
-                wear.src = "grayf.webp"
+                wear.src = "grayf.jpg"
             }
             else if(color == 'Черный' && type == 'Футболка') {
-                wear.src = "blackf.webp"
+                wear.src = "blackf.jpg"
             }
             else if(color == 'Белый' && type == 'Шорты') {
-                wear.src = "whitesh.webp"
+                wear.src = "whitesh.jpg"
             }
             else if(color == 'Серый' && type == 'Шорты') {
                 wear.src = "graysh.webp"
@@ -79,11 +85,11 @@
             Цвет одежды:
             <select id="wear-color">
                 <option>Белый</option>
-                <option>Черный</option>
                 <option>Серый</option>
+                <option>Черный</option>
             </select><br>
 
-            Цвет одежды:
+            Тип одежды:
             <select id="wear-type">
                 <option>Футболка</option>
                 <option>Шорты</option>
