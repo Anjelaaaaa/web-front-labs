@@ -44,11 +44,12 @@
                 let newBlock = document.createElement('div');
                 newBlock.style.backgroundColor = "rgb(223, 223, 223)";
                 newBlock.style.height = "40px";
-                newBlock.style.width = ((i*20)+100)+'px';
+                newBlock.style.width = ((i*20)+150)+'px';
                 newBlock.style.border = "2px solid rgb(216, 163, 17)";
                 newBlock.style.margin = "10px";
                 newBlock.style.borderRadius = "15px";
                 newBlock.style.textAlign = "center";
+                newBlock.style.lineHeight = '30px';
                 newBlock.style.color = "rgb(194, 85, 120)";
                 newBlock.innerHTML = `Блок № ${i+1}: 2*${i}<sup>2</sup> = ${2 * i**2}`;
                 main.appendChild(newBlock);
@@ -62,6 +63,7 @@
                 newBlock.style.height = '25px';
                 newBlock.style.color = "rgb(194, 85, 120)";
                 newBlock.style.textAlign = "center";
+                newBlock.style.lineHeight = '25px';
                 newBlock.style.backgroundColor = "rgb(223, 223, 223)";
                 newBlock.style.border = "2px solid rgb(83, 194, 126)";
                 newBlock.style.borderRadius = "7px";
@@ -71,6 +73,24 @@
                 main.appendChild(newBlock);
             }
         }
+        function add10_80() {
+                let main = document.querySelector('main');
+                for(let i = 10; i>=-80; i-=3) {
+                    let newBlock = document.createElement('div');
+                    newBlock.style.width = '40px';
+                    newBlock.style.height = '40px';
+                    newBlock.style.border = '2px solid';
+                    newBlock.style.margin = '10px';
+                    newBlock.style.borderRadius = '50%';
+                    newBlock.style.textAlign = 'center';
+                    newBlock.style.lineHeight = '40px';
+                    newBlock.style.color = "rgb(194, 85, 120)";
+                    newBlock.style.backgroundColor = "rgb(223, 223, 223)";
+                    newBlock.style.display = 'inline-block';
+                    newBlock.innerHTML = `${i}`;
+                    main.appendChild(newBlock);
+                }
+            }
     </script>
 </head>
 <body>
@@ -86,7 +106,7 @@
         <button onclick="add10_80()">10=>-80</button>
         <button onclick="add1_10()">Полупрозрачные блоки</button>
         <button onclick="addgre()">Цветные круги</button>
-        <input type="number" id="gr" placeholder="Введите число кругов">
+        <input type="number" id="gr" placeholder="Введите число кругов"><br>
     </main>
        
     <footer>
