@@ -98,14 +98,13 @@
                 let newBlock = document.createElement('div');
                 newBlock.style.backgroundColor = "rgb(80, 185, 199)";
                 newBlock.style.height = "40px";
-                newBlock.style.width = "500px";
+                newBlock.style.width = "300px";
                 newBlock.style.margin = "10px";
-                newBlock.style.border = '2px solid white';
                 newBlock.style.borderRadius = "15px";
                 newBlock.style.textAlign = "center";
                 newBlock.style.lineHeight = '30px';
                 newBlock.style.opacity = i*10 + 10 + "%";
-                newBlock.style.color = "rgb(194, 85, 120)";
+                newBlock.style.color = "rgb(223, 223, 223)";
                 newBlock.innerHTML = `Блок № ${i+1}`;
                 main.appendChild(newBlock);
             }
@@ -113,20 +112,25 @@
         function addNewColorBlocks() {
             let main = document.querySelector("main");
             let ring = document.getElementById("ring").value;
-            for(let i = 0; i < ring; i++) {
+            for(let i = ring; i > 0; i-=1) {
                 let newBlock = document.createElement('div');
                 newBlock.style.width = '40px';
                 newBlock.style.height = '40px';
-                newBlock.style.border = '2px solid';
                 newBlock.style.margin = '10px';
                 newBlock.style.borderRadius = '50%';
                 newBlock.style.textAlign = 'center';
                 newBlock.style.lineHeight = '40px';
-                newBlock.style.color = "rgb(194, 85, 120)";
-                newBlock.style.backgroundColor = "rgb(223, 223, 223)";
+                newBlock.style.color = "white";
+                newBlock.style.fontWeight = "bold";
                 newBlock.style.display = 'inline-block';
-                newBlock.innerHTML = `${i+1}`;
+                newBlock.innerHTML = `${i}`;
                 main.appendChild(newBlock);
+                if (i%2==0) {
+                        newBlock.style.backgroundColor = "rgb(255, 176, 111)";
+                    }
+                else{
+                     newBlock.style.backgroundColor = "rgb(255, 111, 171)";
+                }
             }
         }
     </script>
@@ -144,7 +148,7 @@
         <button onclick="add10_80()">10=>-80</button>
         <button onclick="addNewOpacityBlocks()">Полупрозрачные блоки</button>
         <button onclick="addNewColorBlocks()">Цветные круги</button>
-        <input type="number" id="ring" placeholder="Введите число кругов"><br>
+        <input type="number" id="ring" placeholder="Количeство кругов"><br>
     </main>
        
     <footer>
