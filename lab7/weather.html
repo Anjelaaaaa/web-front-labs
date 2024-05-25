@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оноприенко Анжелика Андреевна. Погода</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-32x32.png">
+    <link rel="icon" href="../favicon-16x16.png">
+    <style>
+        button {
+            display: block;
+            margin: auto;
+            background-color: rgba(240, 248, 255, 0);
+            border: 0px;
+            font-size: 20px;
+            color: rgb(66, 164, 250);
+        }
+        div {
+            text-align: center;
+            color: rgb(66, 164, 250);
+        }
+        .weather {
+            background-color: rgb(255, 255, 255);
+            line-height: 20px;
+            padding: 20px;
+            width: 450px;
+            margin: auto;
+            border-radius: 10px;
+        }
+    </style>
+    <script>
+        function getWeatherForecast() {
+            const apiUrl = 'https://api.open-meteo.com/v1/forecast?latitude=55.0415&longitude=82.9346&hourly=temperature_2m&timezone=Asia%2FBangkok';
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    const temperatures = data.hourly.temperature_2m;
+                    const times = data.hourly.time;
+                    const weatherInfo = document.getElementById('weatherInfo');
+                    const today = new Date().toISOString().split('T')[0];
+                    let tempAt8 = '', tempAt12 = '', tempAt20 = ''; 
+                    times.forEach((time, index) => {
+                        const date = time.split('T')[0];
+                        const hour = time.split('T')[1].split(':')[0];
+                        if (date === today) {
+                            if (hour === '08') {
+                                tempAt8 = temperatures[index];
+                            } else if (hour === '12') {
+                                tempAt12 = temperatures[index];
+                            } else if (hour === '20') {
+                                tempAt20 = temperatures[index];
+                            }
+                        }
+                    });
+                    weatherInfo.innerHTML = `
+                        <p><b>Погода в Новосибирске сегодня</b></p>
+                        <p>Время 08:00 (утро): ${tempAt8} °C</p>
+                        <p>Время 12:00 (день): ${tempAt12} °C</p>
+                        <p>Время 20:00 (вечер): ${tempAt20} °C</p>`;
+                })
+                .catch(error => {
+                    console.error('Ошибка при получении данных о погоде:', error);
+                    document.getElementById('weatherInfo').innerText = 'Ошибка при получении данных.';
+                });
+            let button = document.getElementById("button");
+            button.style.display = "none";
+        }
+    </script>
+</head>
+<body>
+    <header style= "padding:15px;">
+        НГТУ, ФБ, Лабораторная работа 7
+    </header>
+    
+    <main>
+        <div class="weather">
+            <button onclick="getWeatherForecast()" id="button">Показать погоду</button>
+            <div id="weatherInfo"></div>
+            <img src="weather.jpeg" width="200">
+        </div>
+    </main>
+
+    <footer>
+        &copy; Анжелика Оноприенко, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>
