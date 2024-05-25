@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оноприенко Анжелика Андреевна. Курс евро</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <style>
+        button {
+            background-color: rgba(250, 235, 215, 0);
+            border: 0px;
+            cursor: pointer;
+            font-size: 16px;
+            color: rgb(0, 113, 179);
+            font-weight: bold;
+        }
+        .euro {
+            background-color: rgba(214, 225, 235, 0.637);
+            border: 3px double rgb(0, 174, 255);
+            color: rgb(0, 113, 179);
+            text-align: center;
+            width: 400px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 15px;
+        }
+    </style>
+    <script>
+        function getEuroExchangeRate() {
+            const url = 'https://www.cbr-xml-daily.ru/daily_json.js';
+            fetch(url)
+                .then(function(response) {
+                    return response.json();
+                })
+                .then(json => {
+                    const euro = json.Valute.EUR;
+                    const currentRate = euro.Value;
+                    const previousRate = euro.Previous;
+                    const change = currentRate - previousRate;
+                    const changeText = change > 0 ? `поднялся на ${change.toFixed(4)}` : `опустился на ${(-change).toFixed(4)}`;
+                    const info = document.getElementById('exchangeRateInfo');
+                    const dateParts = json.Date.split('T')[0].split('-'); 
+                    const formattedDate = `${dateParts[2]}.${dateParts[1]}.${dateParts[0]}`;
+                    info.innerHTML = `
+                        <p><b>Текущий курс евро: ${currentRate.toFixed(2)} ₽</b></p>
+                        <p>Дата запроса: ${formattedDate}</p> 
+                        <p>Курс за предыдущую дату: ${previousRate.toFixed(2)} ₽</p>
+                        <p>Курс евро ${change >= 0 ? 'поднялся' : 'опустился'} на: ${Math.abs(change).toFixed(4)} ₽</p>
+                        <a href="https://www.cbr-xml-daily.ru/">Источник данных</a>`;
+                });
+            let button = document.getElementById("button");
+            button.style.display = "none";
+            }   
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+    </header>
+
+    <main>
+        <div class="euro">
+            <button onclick="getEuroExchangeRate()" id="button">Получить курс евро</button>
+            <div id="exchangeRateInfo"></div>
+        </div>
+    </main>
+       
+    <footer>
+        &copy; Анжелика Оноприенко, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>
