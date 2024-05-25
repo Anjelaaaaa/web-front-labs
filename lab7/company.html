@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оноприенко Анжелика Андреевна. Котировки акций компании АНК «Башнефть»</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <style>
+        button {
+            line-height: 35px;
+            font-size: 16px;
+            background-color: rgba(222, 242, 255, 0.507);
+            border: 2px solid rgb(70, 130, 165);
+            color: rgb(29, 96, 128);
+            display: block; 
+            margin: auto;
+        }
+        table {
+            line-height: 35px;
+            width: 350px;
+            text-align: center;
+            background-color: rgba(222, 242, 255, 0.507);
+            margin: auto;
+            border-collapse: collapse;
+        }
+        td {
+            border: 2px solid rgb(70, 130, 165);
+        }
+        div {
+            line-height: 35px;
+            text-align: center;
+        }
+    </style>
+    <script>
+        function showCompany() {
+            const prices = [
+                3378, 3398, 3371, 3365, 3338,
+                3186, 3185, 3165, 3073, 3033
+            ];
+            const dates = [
+                '13.05.2024', '14.05.2024', '15.05.2024', '16.05.2024',
+                '17.05.2024', '20.05.2024', '21.05.2024', '22.05.2024',
+                '23.05.2024', '24.05.2024'
+            ];
+            let table = document.getElementById('company-table');
+            table.innerHTML = '';
+            let headerRow = table.insertRow(-1);
+            headerRow.insertCell(0).innerText = 'Дата';
+            headerRow.insertCell(1).innerText = 'Цена акций';
+            headerRow.insertCell(2).innerText = 'Разница';
+            let sum = 0, max = prices[0], min = prices[0];
+            for(let i = 0; i < prices.length; i++) {
+                let tr = table.insertRow(-1);
+                tr.insertCell(0).innerText = dates[i];
+                tr.insertCell(1).innerText = prices[i];
+                let diffCell = tr.insertCell(2);
+                if (i > 0) {
+                    let diff = prices[i] - prices[i - 1];
+                    diffCell.innerText = diff.toFixed(2);
+                } else {
+                    diffCell.innerText = '—';
+                }
+                sum += prices[i];
+                if (prices[i] > max) max = prices[i];
+                if (prices[i] < min) min = prices[i];
+            }
+            let average = sum / prices.length;
+            average = average.toFixed(2);
+            let detail = document.getElementById('detail');
+            detail.innerText = `Средняя стоимость: ${average} 
+            Максимальная стоимость: ${max} 
+            Минимальная стоимость: ${min}`;
+            document.querySelector('button').remove(); 
+        }
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+    </header>
+
+    <main>
+        <button onclick="showCompany()">Курс доллара </button>
+        <table id="company-table"></table>
+        <div id="detail"></div>
+    </main>
+       
+    <footer>
+        &copy; Анжелика Оноприенко, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>
