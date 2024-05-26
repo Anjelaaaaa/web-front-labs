@@ -26,7 +26,7 @@
             margin: 30px;
             font-family: Calibri;
         }
-        a:hover {
+        footer a:hover {
             color: rgb(24, 173, 44);
             text-decoration: underline;
             background-color: aliceblue;
@@ -34,20 +34,9 @@
             border-radius: 7px;
             transition: 0.3s;
         }
-        .picture {
+        .pictureA {
             width: 100%; 
             z-index: 0;
-        }
-        .pictureB {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            object-fit: cover;
-        }
-        .pictureC {
-            width: 250px;
-            margin: 20px;
         }
         h1 {
             position: absolute;
@@ -58,250 +47,223 @@
             font-size: 50px;
             font-family: Calibri;
         }
-        h2 {
-            font-family: Calibri;
-            text-align: center;
-            color: rgb(54, 54, 54);
-            font-size: 30px;
-            margin-top: 80px;
-        }
-        h3 {
-            position: absolute;
-            color: white;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 30px;
-            font-family: Calibri;
-            text-align: center;
-        }
-        h4 {
-            font-family: Calibri;
-            font-size: 28px;
-            margin-left: 20%;
-        }
-        .container {
+        .containerA {
             position: relative;
         }
         .containerB {
-            position: relative;
-            overflow: hidden;
-            width: 100%;
-            height: 300px;
-            margin-top: 80px;
-            margin-bottom: 60px;
+            background-color: rgb(226, 225, 225);
+            display: inline-block;
+            width: 300px;
+            height: 370px;
+            margin: 70px 70px 0px 70px;
+            padding: 30px;
+            border-radius: 15px;
         }
         .containerC {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
-            align-items: flex-start;
-            margin: 0 20%;
         }
-        span {
-            color: rgb(110, 214, 115);
-        }
-        .text {
+        .textA {
             font-family: Calibri;
-            margin-left: 20%;
-            margin-right: 20%;
             margin-top: 25px;
             line-height: 30px;
             font-size: 20px;
         }
-        .textA {
-            font-family: Calibri;
-            font-size: 20px;
-            line-height: 30px;
-            margin: 0 20px 20px 0;
-            flex: 1;
-        }
         .textB {
             font-family: Calibri;
-            font-size: 14px;
-            text-align: center;
-            margin-top: 10px;
-            width: 250px;
+            color: rgb(82, 82, 82);
+            line-height: 30px;
+            margin-left: 5px;
         }
-        .license {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        li {
-            margin-top: 20px;
-        }
-        .icon-container {
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            gap: 200px;
-            margin: 70px;
-        }
-        .icon-wrapper {
-            text-align: center;
-        }
-        .icon {
-            background-color: rgb(38, 26, 90);
-            border-radius: 100%;
-            padding: 15px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 45px;
-            height: 45px; 
-            margin: auto;
-        }
-        .iconimg {
-            width: 40px;
-        }
-        .icon-text {
-            margin-top: 10px;
+        .containerC .containerB a {
             font-family: Calibri;
-            font-size: 18px;
-            text-align: center;
+            line-height: 30px;
+            font-size: 20px;
+            font-weight: bold;
         }
-        b {
-            font-size: 22px;
-            line-height: 40px;
+        .containerB .icon-date {
+            display: flex;
+            align-items: center;
+        }
+        .containerB a:link {
+            color: rgb(31, 31, 31);
+            text-decoration: none;
+        }
+        .containerB a:visited {
+            color: rgb(128, 11, 196);
+            text-decoration: none;
+        }
+        .containerB a:hover {
+            color: rgb(56, 5, 175);
+            background-color: aliceblue;
+            text-shadow: 4px 3px 3px rgba(85, 84, 84, 0.582);
+            border-radius: 7px;
+            transition: 0.3s;
+        }
+        .containerB a:active {
+            color: black;
+            opacity: 0.3;
+        }
+        .menu {
+            position: fixed;
+            right: 20px;
+            top: 25px;
+            cursor: pointer;
+            z-index: 3;
+        }
+        .line {
+            background-color: rgb(255, 255, 255);
+            border: 1px solid rgb(38, 26, 90);
+            margin: 4px;
+            width: 25px;
+            height: 3px;
+        }
+        .dropdown-menu {
+            display: none;
+            position: fixed;
+            right: 20px;
+            top: 60px;
+            background-color: rgb(38, 26, 90);
+            border-radius: 5px;
+            padding: 10px;
+            z-index: 2;
+        }
+        .dropdown-menu a:last-child {
+            border-bottom: none;
+        }
+        .dropdown-menu a.active {
+            background-color: rgb(95, 187, 99);
+            border-radius: 5px;
+        }
+        .dropdown-menu a {
+            border-radius: 5px;
+            display: block;
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            padding: 10px;
+            border-bottom: 1px solid rgb(86, 65, 134);
+            font-family: Calibri;
+        }
+        .dropdown-menu a:hover {
+            background-color: white;
+            color: black;
+            transition: 0.5s;
+        }
+        .containerC .containerB img {
+            width: 18px;
         }
     </style>
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('dropdownMenu');
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
 </head>
 <body>
     <header>
         <img src="https://www.sputnik-am.ru/wp-content/uploads/2023/01/logo-sputnik-day.svg">
+        <div class="menu" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <div class="dropdown-menu" id="dropdownMenu">
+            <a href="company.html">О компании</a>
+            <a href="news.html" class="active">Новости</a>
+            <a href="currency.html">Курс валют</a>
+            <a href="contact.html">Контактные данные</a>
+            <a href="video.html">Видео</a>
+        </div>
     </header>
 
     <main>
-        <div class="container">
-            <img src="https://www.sputnik-am.ru/wp-content/uploads/2023/01/navigation-subheader-bg.jpg" class="picture">
-            <h1>О компании</h1>
+        <div class="containerA">
+            <img src="https://www.sputnik-am.ru/wp-content/uploads/2023/01/navigation-subheader-bg.jpg" class="pictureA">
+            <h1>Пресс-центр</h1>
         </div>
-
-        <h2>Cовременные методы управления и <span>учёт пожеланий клиентов</span></h2>
-
-        <div class="text">
-            Акционерное общество «Управляющая компания «СПУТНИК – УПРАВЛЕНИЕ
-            КАПИТАЛОМ» специализируется на управлении активами институциональных
-            инвесторов. Компания создана 16 августа 2001 года, обладает большим
-            опытом работы на финансовом рынке, является членом Национальной
-            ассоциации участников фондового рынка.
-        </div>
-
-        <div class="text">
-            Сегодня деятельность компании сосредоточена на доверительном
-            управлении пенсионными резервами негосударственных пенсионных
-            фондов. Помимо этого компания также управляет страховыми
-            резервами и собственными средствами страховых компаний.
-        </div>
-
-        <div class="icon-container">
-            <div class="icon-wrapper">
-                <div class="icon">
-                    <img src="iconA.png" class="iconimg">
-                </div>
-                <div class="icon-text"><b>20+ лет</b><br>успешно управляем активами</div>
-            </div>
-    
-            <div class="icon-wrapper">
-                <div class="icon">
-                    <img src="iconB.png" class="iconimg">
-                </div>
-                <div class="icon-text"><b>Рейтинг A++</b><br>по мнению «Эксперт РА»</div>
-            </div>
-    
-            <div class="icon-wrapper">
-                <div class="icon">
-                    <img src="iconC.png" class="iconimg">
-                </div>
-                <div class="icon-text"><b>79 млрд рублей</b><br>активов под управлением</div>
-            </div>
-        </div>
-
-        <div class="text">
-            В своей работе мы сочетаем современные методы управления
-            активами и эффективную систему риск-менеджмента, соответствующую
-            международным стандартам. Благодаря этому мы обеспечиваем
-            высокое качество предоставления услуг, учитываем все пожелания
-            и инвестиционные цели клиентов.
-        </div>
-
-        <div class="text">
-            Компания соблюдает все требования законодательства и регулятора,
-            а также активно участвует в их развитии. Является отраслевым
-            лидером в корпоративном управлении и системе внутреннего контроля.
-            Контролер компании является председателем комитета НАУФОР по
-            внутреннему контролю в Управляющих компаниях.
-        </div>
-
-        <div class="containerB">
-            <img src="https://www.sputnik-am.ru/wp-content/uploads/2023/01/navigation-solutions-subheader-bg-1.jpg" class="pictureB">
-            <h3>
-                Ответственный подход к управлению и неукоснительное выполнение
-                обязательств перед клиентами и партнёрами — <span>главный приоритет
-                деятельности компании</span>
-            </h3>
-        </div>
-
-        <h4>Лицензии</h4>
 
         <div class="containerC">
-            <div class="textA">
-                АО «УК «СПУТНИК – УПРАВЛЕНИЕ КАПИТАЛОМ» осуществляет лицензируемые
-                виды деятельности на основании:
-                <ul>
-                    <li>
-                        Лицензии на осуществление деятельности по управлению инвестиционными
-                        фондами, паевыми инвестиционными фондами и негосударственными
-                        пенсионными фондами, № 21-000-1-00054, выданной ФКЦБ РФ 03.12.2001 г.,
-                        срок действия — бессрочно;
-                    </li>
-                    <li>
-                        Лицензии профессионального участника рынка ценных бумаг на осуществление
-                        деятельности по управлению ценными бумагами № 077-08379-001000, выданной
-                        ФСФР России 21.04.2005 г, без ограничения срока действия.
-                    </li>
-                </ul>
-            </div>
-
-            <div class="license">
-                <img src="https://www.sputnik-am.ru/wp-content/uploads/2019/04/Lic05122001.jpg" class="pictureC">
-                <div class="textB">
-                    Лицензия ЦБ РФ на осуществление деятельности по управлению инвестиционными
-                    фондами, ПИФ и НПФ № 21-000-1-00054 от 03.12.2001 г.
+            <div class="containerB">
+                <div class="icon-date">
+                    <img src="clock.png">
+                    <div class="textB">23.05.2024</div>
                 </div>
+                <a href="new1.html">Пойдем, выйдем: покинет ли Россия Международный валютный фонд</a>
+                <div class="textA">Насколько реален сценарий выхода из организации, и какие плюсы и минусы могут быть у такого решения?</div>
             </div>
 
-            <div class="license">
-                <img src="https://www.sputnik-am.ru/wp-content/uploads/2019/04/LicPURCB.jpg" class="pictureC">
-                <div class="textB">
-                    Лицензия ЦБ РФ профессионального участника рынка ценных бумаг на
-                    осуществление деятельности по управлению ценными бумагами № 077-08379-001000
-                    от 21.04.2005 г.
+            <div class="containerB">
+                <div class="icon-date">
+                    <img src="clock.png">
+                    <div class="textB">22.04.2024</div>
                 </div>
-            </div>
-        </div>
-
-        <h4>Рейтинг</h4>
-
-        <div class="containerC">
-            <div class="textA">
-                19 января 2022 года Рейтинговое агентство «Эксперт РА» присвоило АО
-                «УК «СПУТНИК – УПРАВЛЕНИЕ КАПИТАЛОМ» рейтинг надежности на уровне А++
-                «Очень высокий уровень надежности и качества услуг».
+                <a href="new2.html">О технических работах на сайте в ночь с 23 на 24 апреля 2024 года</a>
+                <div class="textA">Возможна приостановка работы сайта на срок до 30 минут – раскрываемая информация будет временно недоступна для просмотра.</div>
             </div>
 
-            <div class="license">
-                <img src="https://www.sputnik-am.ru/wp-content/uploads/2023/08/ekspertra-rejting-a-2023-2024-scaled.jpg" class="pictureC">
-                <div class="textB">
-                    Свидетельство Рейтинг А++ (Эксперт-РА, 2023-2024)
+            <div class="containerB">
+                <div class="icon-date">
+                    <img src="clock.png">
+                    <div class="textB">18.04.2024</div>
                 </div>
+                <a href="new3.html">Монетизация воды</a>
+                <div class="textA">Возможна приостановка работы сайта на срок до 30 минут – раскрываемая информация будет временно недоступна для просмотра.</div>
             </div>
 
-            <div class="license">
-                <img src="https://www.sputnik-am.ru/wp-content/uploads/2023/08/expertra-ra-a-2023-2024-scaled.jpg" class="pictureC">
-                <div class="textB">
-                    Rating Certificate А++ (Expert RA, 2023-2024)
+            <div class="containerB">
+                <div class="icon-date">
+                    <img src="clock.png">
+                    <div class="textB">21.03.2024</div>
                 </div>
+                <a href="new4.html">Угасание евро</a>
+                <div class="textA">На страницах «КоммерсантЪ» вышла новая публикация Александра Лосева о том, как европейская валюта стала токсичной для всего мира и как в течение последних лет происходит её угасание.</div>
+            </div>
+
+            <div class="containerB">
+                <div class="icon-date">
+                    <img src="clock.png">
+                    <div class="textB">26.02.2024</div>
+                </div>
+                <a href="new5.html">Времена меняются</a>
+                <div class="textA">На страницах «Коммерсантъ» вышла новая публикация Александра Лосева о том, как меняется денежно-кредитная политика в текущих геополитических условиях.</div>
+            </div>
+
+            <div class="containerB">
+                <div class="icon-date">
+                    <img src="clock.png">
+                    <div class="textB">24.01.2024</div>
+                </div>
+                <a href="new6.html">Об изменении адреса в пределах места нахождения</a>
+                <div class="textA">С 24 января 2024 года АО «УК «СПУТНИК – УПРАВЛЕНИЕ КАПИТАЛОМ» находится по адресу: 121614, г. Москва, вн.тер.г. Муниципальный округ Крылатское, ул. Крылатская, д. 17, к. 1.</div>
+            </div>
+
+            <div class="containerB">
+                <div class="icon-date">
+                    <img src="clock.png">
+                    <div class="textB">16.11.2023</div>
+                </div>
+                <a href="new7.html">Инвестиции в эпоху конфликтов, или Как геополитика меняет инвестиционные стратегии</a>
+                <div class="textA">Новая публикация Александра Лосева о том, что безопасных активов не существует, а есть только ответственное инвестиционное поведение и геополитические факторы, которые больше нельзя игнорировать.</div>
+            </div>
+
+            <div class="containerB">
+                <div class="icon-date">
+                    <img src="clock.png">
+                    <div class="textB">23.10.2023</div>
+                </div>
+                <a href="new8.html">Мембрана Решетникова, или шинуазри* в российских финансах</a>
+                <div class="textA">О том, как можно исправить ситуацию на валютном рынке России и почему китайская модель не панацея, — в новой публикации Александра Лосева для «КоммерсантЪ».</div>
+            </div>
+
+            <div class="containerB">
+                <div class="icon-date">
+                    <img src="clock.png">
+                    <div class="textB">08.008.2023</div>
+                </div>
+                <a href="new9.html">Деградация как стратегия Запада в ментальной войне</a>
+                <div class="textA">В Парламентской газете опубликована свежая статья Генерального директора АО «УК «СПУТНИК-УПРАВЛЕНИЕ КАПИТАЛОМ» Александра Лосева.</div>
             </div>
         </div>
     </main>
