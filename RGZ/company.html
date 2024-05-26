@@ -26,7 +26,7 @@
             margin: 30px;
             font-family: Calibri;
         }
-        a:hover {
+        footer a:hover {
             color: rgb(24, 173, 44);
             text-decoration: underline;
             background-color: aliceblue;
@@ -164,11 +164,75 @@
             font-size: 22px;
             line-height: 40px;
         }
+        .menu {
+            position: absolute;
+            right: 20px;
+            top: 25px;
+            cursor: pointer;
+            z-index: 3;
+        }
+        .line {
+            background-color: rgb(255, 255, 255);
+            margin: 5px;
+            width: 25px;
+            height: 3px;
+        }
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            right: 20px;
+            top: 60px;
+            background-color: rgb(38, 26, 90);
+            border-radius: 5px;
+            padding: 10px;
+            z-index: 2;
+        }
+        .dropdown-menu a {
+            display: block;
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            padding: 10px;
+            border-bottom: 1px solid rgb(86, 65, 134);
+            font-family: Calibri;
+        }
+        .dropdown-menu a:last-child {
+            border-bottom: none;
+        }
+        .dropdown-menu a.active {
+            background-color: rgb(95, 187, 99);
+            border-radius: 5px;
+        }
+        .dropdown-menu a {
+            border-radius: 5px;
+        }
+        .dropdown-menu a:hover {
+            background-color: white;
+            color: black;
+            transition: 0.5s;
+        }
     </style>
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('dropdownMenu');
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
 </head>
 <body>
     <header>
         <img src="https://www.sputnik-am.ru/wp-content/uploads/2023/01/logo-sputnik-day.svg">
+        <div class="menu" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <div class="dropdown-menu" id="dropdownMenu">
+            <a href="company.html" class="active">О компании</a>
+            <a href="#news">Новости</a>
+            <a href="#currency">Курс валют</a>
+            <a href="#contact">Контактные данные</a>
+            <a href="#video">Видео</a>
+        </div>
     </header>
 
     <main>
