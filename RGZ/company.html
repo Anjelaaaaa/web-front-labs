@@ -34,7 +34,7 @@
             border-radius: 7px;
             transition: 0.3s;
         }
-        .picture {
+        .pictureA {
             width: 100%; 
             z-index: 0;
         }
@@ -80,7 +80,7 @@
             font-size: 28px;
             margin-left: 20%;
         }
-        .container {
+        .containerA {
             position: relative;
         }
         .containerB {
@@ -100,7 +100,7 @@
         span {
             color: rgb(110, 214, 115);
         }
-        .text {
+        .textA {
             font-family: Calibri;
             margin-left: 20%;
             margin-right: 20%;
@@ -108,14 +108,14 @@
             line-height: 30px;
             font-size: 20px;
         }
-        .textA {
+        .textB {
             font-family: Calibri;
             font-size: 20px;
             line-height: 30px;
             margin: 0 20px 20px 0;
             flex: 1;
         }
-        .textB {
+        .textC {
             font-family: Calibri;
             font-size: 14px;
             text-align: center;
@@ -165,7 +165,7 @@
             line-height: 40px;
         }
         .menu {
-            position: absolute;
+            position: fixed;
             right: 20px;
             top: 25px;
             cursor: pointer;
@@ -173,13 +173,14 @@
         }
         .line {
             background-color: rgb(255, 255, 255);
-            margin: 5px;
+            border: 1px solid rgb(38, 26, 90);
+            margin: 4px;
             width: 25px;
             height: 3px;
         }
         .dropdown-menu {
             display: none;
-            position: absolute;
+            position: fixed;
             right: 20px;
             top: 60px;
             background-color: rgb(38, 26, 90);
@@ -194,15 +195,13 @@
             padding: 10px;
             border-bottom: 1px solid rgb(86, 65, 134);
             font-family: Calibri;
+            border-radius: 5px;
         }
         .dropdown-menu a:last-child {
             border-bottom: none;
         }
         .dropdown-menu a.active {
             background-color: rgb(95, 187, 99);
-            border-radius: 5px;
-        }
-        .dropdown-menu a {
             border-radius: 5px;
         }
         .dropdown-menu a:hover {
@@ -228,30 +227,31 @@
         </div>
         <div class="dropdown-menu" id="dropdownMenu">
             <a href="company.html" class="active">О компании</a>
-            <a href="#news">Новости</a>
-            <a href="#currency">Курс валют</a>
-            <a href="#contact">Контактные данные</a>
-            <a href="#video">Видео</a>
+            <a href="news.html">Новости</a>
+            <a href="currency.html">Курс валют</a>
+            <a href="contact.html">Контактные данные</a>
+            <a href="video.html">Видео</a>
         </div>
     </header>
 
     <main>
-        <div class="container">
-            <img src="https://www.sputnik-am.ru/wp-content/uploads/2023/01/navigation-subheader-bg.jpg" class="picture">
+        <div class="containerA">
+            <img src="https://www.sputnik-am.ru/wp-content/uploads/2023/01/navigation-subheader-bg.jpg" class="pictureA">
             <h1>О компании</h1>
         </div>
 
         <h2>Cовременные методы управления и <span>учёт пожеланий клиентов</span></h2>
 
-        <div class="text">
+        <div class="textA">
             Акционерное общество «Управляющая компания «СПУТНИК – УПРАВЛЕНИЕ
             КАПИТАЛОМ» специализируется на управлении активами институциональных
             инвесторов. Компания создана 16 августа 2001 года, обладает большим
             опытом работы на финансовом рынке, является членом Национальной
-            ассоциации участников фондового рынка.
+            ассоциации участников фондового рынка. Генеральным директором
+            компании является Лосев Александр Вячеславович.
         </div>
 
-        <div class="text">
+        <div class="textA">
             Сегодня деятельность компании сосредоточена на доверительном
             управлении пенсионными резервами негосударственных пенсионных
             фондов. Помимо этого компания также управляет страховыми
@@ -281,7 +281,7 @@
             </div>
         </div>
 
-        <div class="text">
+        <div class="textA">
             В своей работе мы сочетаем современные методы управления
             активами и эффективную систему риск-менеджмента, соответствующую
             международным стандартам. Благодаря этому мы обеспечиваем
@@ -289,7 +289,7 @@
             и инвестиционные цели клиентов.
         </div>
 
-        <div class="text">
+        <div class="textA">
             Компания соблюдает все требования законодательства и регулятора,
             а также активно участвует в их развитии. Является отраслевым
             лидером в корпоративном управлении и системе внутреннего контроля.
@@ -309,7 +309,7 @@
         <h4>Лицензии</h4>
 
         <div class="containerC">
-            <div class="textA">
+            <div class="textB">
                 АО «УК «СПУТНИК – УПРАВЛЕНИЕ КАПИТАЛОМ» осуществляет лицензируемые
                 виды деятельности на основании:
                 <ul>
@@ -329,7 +329,7 @@
 
             <div class="license">
                 <img src="https://www.sputnik-am.ru/wp-content/uploads/2019/04/Lic05122001.jpg" class="pictureC">
-                <div class="textB">
+                <div class="textC">
                     Лицензия ЦБ РФ на осуществление деятельности по управлению инвестиционными
                     фондами, ПИФ и НПФ № 21-000-1-00054 от 03.12.2001 г.
                 </div>
@@ -337,7 +337,7 @@
 
             <div class="license">
                 <img src="https://www.sputnik-am.ru/wp-content/uploads/2019/04/LicPURCB.jpg" class="pictureC">
-                <div class="textB">
+                <div class="textC">
                     Лицензия ЦБ РФ профессионального участника рынка ценных бумаг на
                     осуществление деятельности по управлению ценными бумагами № 077-08379-001000
                     от 21.04.2005 г.
@@ -348,7 +348,7 @@
         <h4>Рейтинг</h4>
 
         <div class="containerC">
-            <div class="textA">
+            <div class="textB">
                 19 января 2022 года Рейтинговое агентство «Эксперт РА» присвоило АО
                 «УК «СПУТНИК – УПРАВЛЕНИЕ КАПИТАЛОМ» рейтинг надежности на уровне А++
                 «Очень высокий уровень надежности и качества услуг».
@@ -356,14 +356,14 @@
 
             <div class="license">
                 <img src="https://www.sputnik-am.ru/wp-content/uploads/2023/08/ekspertra-rejting-a-2023-2024-scaled.jpg" class="pictureC">
-                <div class="textB">
+                <div class="textC">
                     Свидетельство Рейтинг А++ (Эксперт-РА, 2023-2024)
                 </div>
             </div>
 
             <div class="license">
                 <img src="https://www.sputnik-am.ru/wp-content/uploads/2023/08/expertra-ra-a-2023-2024-scaled.jpg" class="pictureC">
-                <div class="textB">
+                <div class="textC">
                     Rating Certificate А++ (Expert RA, 2023-2024)
                 </div>
             </div>
