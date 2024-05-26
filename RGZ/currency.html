@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Управляющая компания «Спутник – Управление Капиталом»</title>
+    <link rel="shortcut icon" href="favicon1.ico" type="image/x-icon">
+    <link rel="icon" href="favicon1-16x16.png">
+    <link rel="icon" href="favicon1-32x32.png">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Calibri;
+        }
+        header img {
+            position: absolute;
+            width: 210px;
+            margin-left: 20px;
+            margin-top: 32px;
+            z-index: 1;
+        }
+        .pictureA {
+            width: 100%; 
+            z-index: 0;
+        }
+        footer {
+            font-size: 18px;
+            font-style: italic;
+            text-align: center;
+            margin: 30px;
+        }
+        footer a:hover {
+            color: rgb(24, 173, 44);
+            text-decoration: underline;
+            background-color: aliceblue;
+            text-shadow: 4px 3px 3px rgba(85, 84, 84, 0.582);
+            border-radius: 7px;
+            transition: 0.3s;
+        }
+        .text {
+            font-family: Calibri;
+            line-height: 85px;
+            font-size: 22px;
+        }
+        h1 {
+            position: absolute;
+            color: white;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 50px;
+            font-family: Calibri;
+        }
+        h2 {
+            font-family: Calibri;
+            color: rgb(43, 18, 133);
+        }
+        .containerA {
+            position: relative;
+        }
+        .menu {
+            position: fixed;
+            right: 20px;
+            top: 25px;
+            cursor: pointer;
+            z-index: 3;
+        }
+        .line {
+            background-color: rgb(255, 255, 255);
+            border: 1px solid rgb(38, 26, 90);
+            margin: 4px;
+            width: 25px;
+            height: 3px;
+        }
+        .dropdown-menu {
+            display: none;
+            position: fixed;
+            right: 20px;
+            top: 60px;
+            background-color: rgb(38, 26, 90);
+            border-radius: 5px;
+            padding: 10px;
+            z-index: 2;
+        }
+        .dropdown-menu a {
+            display: block;
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            padding: 10px;
+            border-bottom: 1px solid rgb(86, 65, 134);
+            border-radius: 5px;
+        }
+        .dropdown-menu a:last-child {
+            border-bottom: none;
+        }
+        .dropdown-menu a.active {
+            background-color: rgb(95, 187, 99);
+            border-radius: 5px;
+        }
+        .dropdown-menu a:hover {
+            background-color: white;
+            color: black;
+            transition: 0.5s;
+        }
+        .content {
+            background-color: rgb(226, 225, 225);
+            width: 600px;
+            height: 300px;
+            border-radius: 15px;
+            padding: 30px;
+            margin: auto;
+            text-align: center;
+        }
+        .exchange-rate {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+        .converter {
+            margin-top: 20px;
+        }
+        .converter input {
+            margin-right: 10px;
+            font-size: 18px;
+            border: 1px solid rgb(70, 1, 199);
+            border-radius: 7px;
+        }
+        .converter button {
+            margin-right: 10px;
+            font-size: 18px;
+            border-radius: 7px;
+            border: 1px solid rgb(70, 1, 199);
+        }
+    </style>
+    <script>
+        let exchangeRate;
+        async function fetchExchangeRate() {
+            try {
+                const response = await fetch('https://www.cbr-xml-daily.ru/daily_json.js');
+                const data = await response.json();
+                exchangeRate = data.Valute.TMT.Value;
+                document.getElementById('exchangeRate').innerText = `Туркменский манат (TMT) = ${exchangeRate} рублей (RUB)`;
+            } catch (error) {
+                document.getElementById('exchangeRate').innerText = 'Ошибка загрузки курса валют';
+                console.error('Ошибка загрузки курса валют:', error);
+            }
+        }
+        function convertToTMT() {
+            const rubAmount = document.getElementById('rubAmount').value;
+            if (rubAmount && exchangeRate) {
+                const tmtAmount = (rubAmount / exchangeRate).toFixed(2);
+                document.getElementById('tmtAmount').value = tmtAmount;
+            }
+        }
+        function convertToRUB() {
+            const tmtAmount = document.getElementById('tmtAmount').value;
+            if (tmtAmount && exchangeRate) {
+                const rubAmount = (tmtAmount * exchangeRate).toFixed(2);
+                document.getElementById('rubAmount').value = rubAmount;
+            }
+        }
+        function toggleMenu() {
+            const menu = document.getElementById('dropdownMenu');
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        }
+        window.onload = fetchExchangeRate;
+    </script>
+</head>
+<body>
+    <header>
+        <img src="https://www.sputnik-am.ru/wp-content/uploads/2023/01/logo-sputnik-day.svg">
+        <div class="menu" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <div class="dropdown-menu" id="dropdownMenu">
+            <a href="company.html">О компании</a>
+            <a href="news.html">Новости</a>
+            <a href="currency.html" class="active">Курс валют</a>
+            <a href="contact.html">Контактные данные</a>
+            <a href="video.html">Видео</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="containerA">
+            <img src="https://www.sputnik-am.ru/wp-content/uploads/2023/01/navigation-subheader-bg.jpg" class="pictureA">
+            <h1>Курс валют</h1>
+        </div>
+
+        <div class="content">
+            <div class="exchange-rate" id="exchangeRate">Загрузка...</div>
+            <div class="converter">
+                <h2>Конвертер валют</h2>
+                <div class="text">
+                    <label for="rubAmount">Рубли:</label>
+                    <input type="number" id="rubAmount" placeholder="Количество рублей">
+                    <button onclick="convertToTMT()">Конвертировать в манаты</button>
+                </div>
+                <div class="text">
+                    <label for="tmtAmount">Манаты:</label>
+                    <input type="number" id="tmtAmount" placeholder="Количество манатов">
+                    <button onclick="convertToRUB()">Конвертировать в рубли</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <a href="https://www.sputnik-am.ru/company/">Ссылка на оригинальный сайт</a>
+    </footer>
+</body>
+</html>
