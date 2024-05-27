@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Управляющая компания «Спутник – Управление Капиталом»</title>
+    <link rel="shortcut icon" href="favicon1.ico" type="image/x-icon">
+    <link rel="icon" href="favicon1-16x16.png">
+    <link rel="icon" href="favicon1-32x32.png">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        header img {
+            position: absolute;
+            width: 210px;
+            margin-left: 20px;
+            margin-top: 32px;
+            z-index: 1;
+        }
+        footer {
+            font-size: 18px;
+            font-style: italic;
+            text-align: center;
+            margin: 30px;
+            font-family: Calibri;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+        }
+        footer a:hover {
+            color: rgb(24, 173, 44);
+            text-decoration: underline;
+            background-color: aliceblue;
+            text-shadow: 4px 3px 3px rgba(85, 84, 84, 0.582);
+            border-radius: 7px;
+            transition: 0.3s;
+        }
+        .pictureA {
+            width: 100%; 
+            z-index: 0;
+        }
+        h1 {
+            position: absolute;
+            color: white;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 50px;
+            font-family: Calibri;
+            text-align: center;
+        }
+        .containerA {
+            position: relative;
+        }
+        .containerB {
+            margin-left: 20%;
+            margin-right: 20%;
+        }
+        .textA {
+            font-family: Calibri;
+            margin-top: 25px;
+            line-height: 30px;
+            font-size: 20px;
+        }
+        .textB {
+            font-family: Calibri;
+            color: rgb(82, 82, 82);
+            line-height: 30px;
+        }
+        .containerB .icon-date {
+            display: flex;
+            align-items: center;
+            margin-top: 30px;
+        }
+        .containerB img {
+            width: 18px;
+            margin-right: 5px;
+        }
+        .containerB a:link {
+            color: rgb(31, 31, 31);
+            text-decoration: none;
+        }
+        .containerB a:visited {
+            color: rgb(128, 11, 196);
+            text-decoration: none;
+        }
+        .containerB a:hover {
+            color: rgb(56, 5, 175);
+            background-color: aliceblue;
+            text-shadow: 4px 3px 3px rgba(85, 84, 84, 0.582);
+            border-radius: 7px;
+            transition: 0.3s;
+        }
+        .containerB a:active {
+            color: black;
+            opacity: 0.3;
+        }
+        .menu {
+            position: fixed;
+            right: 20px;
+            top: 25px;
+            cursor: pointer;
+            z-index: 3;
+        }
+        .line {
+            background-color: rgb(255, 255, 255);
+            border: 1px solid rgb(38, 26, 90);
+            margin: 4px;
+            width: 25px;
+            height: 3px;
+        }
+        .dropdown-menu {
+            display: none;
+            position: fixed;
+            right: 20px;
+            top: 60px;
+            background-color: rgb(38, 26, 90);
+            border-radius: 5px;
+            padding: 10px;
+            z-index: 2;
+        }
+        .dropdown-menu a {
+            display: block;
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            padding: 10px;
+            border-bottom: 1px solid rgb(86, 65, 134);
+            font-family: Calibri;
+        }
+        .dropdown-menu a:last-child {
+            border-bottom: none;
+        }
+        .dropdown-menu a.active {
+            background-color: rgb(95, 187, 99);
+            border-radius: 5px;
+        }
+        .dropdown-menu a {
+            border-radius: 5px;
+        }
+        .dropdown-menu a:hover {
+            background-color: white;
+            color: black;
+            transition: 0.5s;
+        }
+        .containerC .containerB img {
+            width: 18px;
+        }
+    </style>
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('dropdownMenu');
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <img src="https://www.sputnik-am.ru/wp-content/uploads/2023/01/logo-sputnik-day.svg">
+        <div class="menu" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <div class="dropdown-menu" id="dropdownMenu">
+            <a href="company.html">О компании</a>
+            <a href="news.html" class="active">Новости</a>
+            <a href="currency.html">Курс валют</a>
+            <a href="contact.html">Контактные данные</a>
+            <a href="video.html">Видео</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="containerA">
+            <img src="https://www.sputnik-am.ru/wp-content/uploads/2023/01/navigation-subheader-bg.jpg" class="pictureA">
+            <h1>Средство от хаоса</h1>
+        </div>
+
+        <div class="containerB">
+            <div class="icon-date">
+                <img src="clock.png">
+                <div class="textB">11.07.2023</div>
+            </div>
+            <div class="textA">
+                Вопросом «Не пора ли переосмыслить цели, да и само понятие технического
+                прогресса?» задается Александр Лосев в своей свежей статье 
+                <a href="https://www.kommersant.ru/doc/6083288" target="_blank">«Средство от хаоса»</a>,
+                вышедшей на страницах <a href="https://www.kommersant.ru/apps/145921?from=tag" target="_blank">
+                Коммерсантъ. Деньги</a>.
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <a href="https://www.sputnik-am.ru/company/">Ссылка на оригинальный сайт</a>   
+    </footer>
+</body>
+</html>
