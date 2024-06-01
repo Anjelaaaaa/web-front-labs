@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оноприенко Анжелика Андреевна. Лабораторная 8</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-32x32.png">
+    <link rel="icon" href="../favicon-16x16.png">
+    <script src="lab8.js"></script>
+    <style>
+        div {
+            color: rgb(70, 66, 193);
+            line-height: 35px;
+            font-size: 14px;
+        }
+        span {
+            line-height: 35px;
+            font-size: 14px;
+        }
+        input {
+            margin: 5px;
+            padding: 5px;
+            font-size: 14px;
+            border-radius: 7px;
+            border: 1px solid;
+        }
+        button {
+            margin: 5px;
+            padding: 5px;
+            font-size: 14px;
+            border-radius: 7px;
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body onload="showDate()">
+    <header>
+        НГТУ, ФБ, Лабораторная работа 8
+    </header>
+    
+    <main>
+        <div id="current-date">
+            <div class="date1"></div>
+            <div class="date2"></div>
+            <div class="date3"></div>
+            <div class="date4"></div>
+            <div class="date5"></div>
+            <div class="date6"></div>
+        </div>
+        <p class="year"></p>
+        <p class="month"></p>
+        <p class="date"></p>
+        <p class="week"></p> <br>
+        <span>Введите день</span><input type="text" class="d"> <br>
+        <span>Введите месяц</span><input type="text" class="m"> <br>
+        <span>Введите год</span><input type="text"  class="y"> <br>
+        <button onclick="WeekFun()">Узнать день недели</button>
+        <div class="out"></div>
+    </main>
+
+    <footer>
+        &copy; Анжелика Оноприенко, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>
