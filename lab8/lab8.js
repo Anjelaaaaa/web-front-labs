@@ -9,17 +9,16 @@ function showDate() {
     let month = document.querySelector('.month');
     let date = document.querySelector('.date');
     let week = document.querySelector('.week');
-
     let today = new Date();
-    out1.innerHTML = 'Дата и время для русской локали: ' + today.toLocaleString('ru-RU');
-    out2.innerHTML = 'Дата и время для индийской локали: ' + today.toLocaleString('gu-IN');
-    out3.innerHTML = 'Дата и время для бразильской локали: ' + today.toLocaleString('pt-BR');
-    out4.innerHTML = 'Дата и время для турецкой локали: ' + today.toLocaleString('tr-TR');
-    out5.innerHTML = 'Дата и время для корейской локали: ' + today.toLocaleString('ko-KR');
-    out6.innerHTML = 'Дата и время для армянской локали: ' + today.toLocaleString('hy-AM');
+    out1.innerHTML = 'Дата и время для русской локали: <br>' + today.toLocaleString('ru-RU');
+    out2.innerHTML = 'Дата и время для индийской локали: <br>' + today.toLocaleString('gu-IN');
+    out3.innerHTML = 'Дата и время для бразильской локали: <br>' + today.toLocaleString('pt-BR');
+    out4.innerHTML = 'Дата и время для турецкой локали: <br>' + today.toLocaleString('tr-TR');
+    out5.innerHTML = 'Дата и время для корейской локали: <br>' + today.toLocaleString('ko-KR');
+    out6.innerHTML = 'Дата и время для армянской локали: <br>' + today.toLocaleString('hy-AM');
     year.innerHTML = 'Текущий год: ' + today.getFullYear();
     nowMonth = today.getMonth();
-    const MonthD = ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь', ]
+    const MonthD = ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь']
     month.innerHTML = 'Текущий месяц: ' + MonthD[nowMonth];
     let nowDate = today.getDate();
     date.innerHTML ='Текущая дата: ' +  nowDate;
@@ -27,7 +26,6 @@ function showDate() {
     const WeekD = ['Воскресенье', 'Понедельник','Вторник','Среда','Четверг','Пятница','Суббота']
     week.innerHTML = 'День недели: ' + WeekD[nowWeek];
 }
-
 function WeekFun() {
     const day = document.querySelector('.d').value;
     const month = document.querySelector('.m').value;
@@ -36,7 +34,7 @@ function WeekFun() {
         document.querySelector('.out').innerText = "Введите все значения";
         return; 
     }
-    if (isNaN(year) || year > 2024) {
+    if (isNaN(year) || year < 1 || year > 2024) {
         document.querySelector('.out').innerText = "Год указан некорректно";
         return;
     }
