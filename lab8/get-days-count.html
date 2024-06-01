@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оноприенко Анжелика Андреевна. Лабораторная 8</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-32x32.png">
+    <link rel="icon" href="../favicon-16x16.png">
+    <script src="get-days-count.js"></script>
+    <style>
+        .birthday1 {
+            position: relative;
+            font-size: 14px;
+            width: 300px;
+            background-color: rgba(255, 255, 255, 0.788);
+            color: rgb(44, 134, 194);
+            border-radius: 15px;
+            padding: 15px;
+            margin: 60px auto;
+            text-align: center;
+            z-index: 1;
+        }
+        .birthday2 {
+            position: relative;
+            left: 0px;
+            top: -145px;
+            width: 300px;
+            height: 40px;
+            background: linear-gradient(to right, red, orange, yellow, green, blue, purple);
+            border-radius: 15px;
+            padding: 15px;
+            margin: auto;
+            text-align: center;
+            -webkit-filter: blur(35px);
+            z-index: 0;
+        }
+        button {
+            border: 1px solid rgb(76, 150, 247);
+            border-radius: 5px;
+            color: rgb(44, 134, 194);
+            margin: 10px 10px 10px 0;
+        }
+        input {
+            margin: 10px;
+            border: 1px solid rgb(76, 150, 247);
+            border-radius: 5px;
+            color: rgb(44, 134, 194);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 8
+    </header>
+    
+    <main>
+        <div class="birthday1">
+            <label>Дата рождения: <input type="date"></label><br>
+            <button onclick="showDaysCount()">Показать число дней</button>
+            <button onclick="clearFields()">Очистить</button>
+            <div id="result" class="result"></div>
+        </div>
+        <div class="birthday2"></div>
+    </main>
+
+    <footer>
+        &copy; Анжелика Оноприенко, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>
