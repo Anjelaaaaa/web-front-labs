@@ -6,7 +6,7 @@ function showDaysCount() {
     daysCount = Math.floor(daysCount);
     let resultDiv = document.getElementById('result');
     resultDiv.textContent = `Количество дней: ${daysCount}`;
-    if (isNaN(inputDate)) {
+    if (birthday.toString() === 'Invalid Date') {
         resultDiv.textContent = `Некорректная дата`;
     }
 }
